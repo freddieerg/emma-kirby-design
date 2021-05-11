@@ -1,0 +1,18 @@
+.cover {
+  margin: 0;
+  height: 60vh;
+
+  @include media-breakpoint-up(sm) {
+    margin: 0 -15px;
+  }
+}
+
+.cover-img {
+  height: 200px;
+
+  @include media-breakpoint-up(md) {
+    height: auto;
+  }
+}
+
+
