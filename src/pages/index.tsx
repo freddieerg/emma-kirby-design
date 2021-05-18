@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import Container from 'react-bootstrap/Container';
 
 const Home = (): JSX.Element => {
@@ -8,8 +6,7 @@ const Home = (): JSX.Element => {
       <div
         className="d-flex flex-grow-1 rounded"
         style={{
-          background:
-            'url("https://emmakirbydesign.co.uk/static/img/projects/winter-and-summer-barns-with-pool/y7k8dvwj.jpg") no-repeat center center',
+          background: 'url("/img/projects/winter-and-summer-barns-with-pool/y7k8dvwj.jpg") no-repeat center center',
           backgroundSize: 'cover',
         }}
       />
