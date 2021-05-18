@@ -14,7 +14,7 @@ const ContactUs = (): JSX.Element => {
         title="Contact Us"
         subtitle={
           <>
-            e: enquiries@emmakirbydesign.com
+            e: enquiries@emmakirbydesign.co.uk
             <br />
             t: +44 13 6781 0575
             <br />
