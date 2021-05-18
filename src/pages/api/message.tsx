@@ -50,7 +50,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
   const { name, email, subject }: MessageReqInterface = req.body;
   await transporter.sendMail({
     from: `"${name}" <mail-bot@emmakirbydesign.co.uk>`,
-    to: 'freddie.erg@outlook.com',
+    to: process.env.STAGE === 'dev' ? 'freddie.erg@outlook.com' : 'enquiries@emmakirbydesign.co.uk',
     subject: subject,
     replyTo: email,
     html: renderCallbackReqBody(req.body),
