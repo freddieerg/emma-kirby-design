@@ -98,3 +98,15 @@ $font-size-sm:                $font-size-base * .875 !default;
 $font-size-xs:                $font-size-base * .7 !default;
 
 $list-inline-padding:         1.2rem !default;
+
+$input-bg:                              transparent !default;
+$input-disabled-bg:                     transparent !default;
+
+$input-color:                           theme-color("primary") !default;
+$input-border-color:                    theme-color("primary") !default;
+
+$input-focus-bg:                        transparent !default;
+$input-focus-border-color:              theme-color("primary") !default;
+$input-focus-color:                     theme-color("primary") !default;
+$input-focus-width:                     0px !default;
+$input-focus-box-shadow:                none !default;

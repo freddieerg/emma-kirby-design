@@ -4,7 +4,6 @@ import Layout from '../components/Layout';
 
 import NextNprogress from 'nextjs-progressbar';
 
-import 'hamburgers/dist/hamburgers.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'socicon/css/socicon.css';
 import '../scss/style.scss';
@@ -15,7 +14,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
       <NextNprogress
         color="#B4B0A6"
         startPosition={0.3}
-        stopDelayMs={200}
+        stopDelayMs={300}
         height={2}
         options={{ showSpinner: false }}
       />

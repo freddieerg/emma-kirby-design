@@ -25,19 +25,19 @@ const EKDNavbar = (): JSX.Element => {
       <Menu show={showMenu} onHide={() => setShowMenu(false)} />
       <Container fluid className="pb-3" style={{ zIndex: 10000 }}>
         <Row>
-          <Col xs={3} sm={3} className="d-flex align-items-center justify-content-start">
+          <Col xs={{ span: 3, order: 0 }} sm={{ span: 3, order: 0 }} className="d-flex align-items-center">
             <Link href="/">
               <a>
                 <img
                   className="hover-brighten"
-                  src="img/logo.png"
+                  src="/img/logo.png"
                   style={{ width: '50px', borderRadius: '1px' }}
                   alt="Emma Kirby Design Logo"
                 />
               </a>
             </Link>
           </Col>
-          <Col xs={6} className="d-sm-none d-flex align-items-center justify-content-center">
+          <Col xs={{ span: 6, order: 1 }} className="d-sm-none d-flex align-items-center justify-content-center">
             <ul className="social-list list-inline text-muted mb-0">
               <li className="list-inline-item">
                 <a href="https://www.instagram.com/emmakirbydesign/" target="_blank" rel="noreferrer">
@@ -68,7 +68,7 @@ const EKDNavbar = (): JSX.Element => {
           <Col sm={6} className="d-none d-sm-flex justify-content-center align-items-center">
             <Link href="/">
               <a>
-                <h3 style={{ marginBottom: '0' }} className="type--bold hover-brighten text-center">
+                <h3 style={{ marginBottom: '0' }} className="font-weight-bold hover-brighten text-center">
                   <span style={{ fontSize: '30px' }}>E</span>mma
                   <span style={{ fontSize: '30px' }}> K</span>irby
                   <span style={{ fontSize: '30px' }}> D</span>esign
@@ -76,7 +76,7 @@ const EKDNavbar = (): JSX.Element => {
               </a>
             </Link>
           </Col>
-          <Col xs={3} sm={3} className="d-flex align-items-center justify-content-end">
+          <Col xs={{ span: 3, order: 2 }} sm={3} className="d-flex align-items-center justify-content-end">
             <button
               onClick={() => setShowMenu(!showMenu)}
               className={`d-flex align-items-center pb-2 pl-2 pt-2 hamburger hamburger--spin-r ${

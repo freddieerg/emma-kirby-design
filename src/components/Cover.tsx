@@ -1,33 +1,36 @@
-import Image from 'next/image';
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 interface CoverProps {
   title: string;
-  subtitle: string;
+  subtitle: JSX.Element;
   image: string;
+  flip?: boolean;
 }
 
-const Cover = ({ title, subtitle, image }: CoverProps): JSX.Element => {
+const Cover = ({ title, subtitle, image, flip }: CoverProps): JSX.Element => {
   return (
-    <Container fluid className="w-auto p-0 cover">
-      <Row className="no-gutter h-100">
+    <Container fluid className="d-flex w-auto px-sm-0 cover">
+      <Row className="no-gutter">
         <Col
           className="d-flex cover-img"
-          lg={5}
-          md={4}
+          lg={6}
+          md={{ span: 4, order: flip ? 1 : 0 }}
           style={{
-            background:
-              'url("https://emmakirbydesign.co.uk/static/img/projects/winter-and-summer-barns-with-pool/y7k8dvwj.jpg") no-repeat center center',
+            background: `url("${image}") no-repeat center center`,
             backgroundSize: 'cover',
           }}
         />
-        <Col lg={7} md={8} className="d-flex flex-column justify-content-center p-5" style={{ background: '#333' }}>
-          <h2>{title}</h2>
+        <Col
+          lg={6}
+          md={8}
+          className="d-flex flex-column justify-content-center py-5 px-4 px-sm-5"
+          style={{ background: '#333' }}
+        >
+          <h1>{title}</h1>
           <hr className="mx-0" />
-          <p>{subtitle}</p>
+          <p style={{ opacity: 0.8, fontSize: '18px' }}>{subtitle}</p>
         </Col>
       </Row>
     </Container>

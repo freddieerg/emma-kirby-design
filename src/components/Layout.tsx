@@ -10,6 +10,22 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   const router = useRouter();
+  const title = (): string => {
+    let title;
+    const id: string = router.query.id as string;
+
+    id ? (title = id) : (title = router.pathname.split('/').pop());
+
+    if (router.pathname.includes('[') && !router.query.id) {
+      return 'Emma Kirby Design';
+    }
+
+    title = title.split('-').join(' ');
+    title = title.replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
+    title = title ? title + ' · Emma Kirby Design' : 'Emma Kirby Design';
+
+    return title.replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
+  };
 
   return (
     <>
@@ -19,7 +35,8 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
           />
-          <title>Emma Kirby Design</title>
+          <link rel="icon" type="image/png" href="/icons/favicon.png" />
+          <title>{title()}</title>
         </Head>
         <Navbar />
         <main className={`${router.pathname === '/' ? 'd-flex flex-grow-1' : ''}`}>{children}</main>

@@ -12,9 +12,8 @@ const Menu = ({ show, onHide }: MenuProps): JSX.Element => {
     <Modal
       show={show}
       onHide={onHide}
-      style={{ background: 'rgb(18,18,18)' }}
       dialogClassName="modal-fullscreen"
-      contentClassName="bg-transparent border-0 h-100 pt-5"
+      contentClassName="border-0 modal-bg-dark pt-5"
     >
       <Modal.Body className="d-flex justify-content-center align-items-center">
         <ul className="list-inline d-inline-block text-center h3 py-4">
@@ -28,14 +27,34 @@ const Menu = ({ show, onHide }: MenuProps): JSX.Element => {
               <li className="py-1">About Us</li>
             </a>
           </Link>
-          <li className="py-1">What We Do</li>
-          <li className="py-1">Projects</li>
-          <li className="py-1">Contact Us</li>
+          <Link href="/what-we-do">
+            <a>
+              <li className="py-1">What We Do</li>
+            </a>
+          </Link>
+          <Link href="/projects">
+            <a>
+              <li className="py-1">Projects</li>
+            </a>
+          </Link>
+          <Link href="/contact-us">
+            <a>
+              <li className="py-1">Contact Us</li>
+            </a>
+          </Link>
         </ul>
       </Modal.Body>
       <Modal.Footer className="border-0 justify-content-center text-center">
         <p className="text-muted small">
-          <span className="h5">Terms & Conditions · Privacy Policy</span>
+          <span className="h5">
+            <Link href="/privacy">
+              <a>Privacy Policy</a>
+            </Link>{' '}
+            ·{' '}
+            <Link href="terms">
+              <a>Terms & Conditions</a>
+            </Link>
+          </span>
           <br />© 2021 Emma Kirby Design | Designed by Freddie Ergatoudis
         </p>
       </Modal.Footer>

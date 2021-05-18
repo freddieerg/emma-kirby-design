@@ -1,9 +1,10 @@
 .cover {
-  margin: 0;
-  height: 60vh;
+  @include media-breakpoint-up(md) {
+    min-height: 80vh !important;
+  }
 
-  @include media-breakpoint-up(sm) {
-    margin: 0 -15px;
+  .row {
+    width: 100vw;
   }
 }
 

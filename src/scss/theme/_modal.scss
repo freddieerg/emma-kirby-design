@@ -3,4 +3,12 @@
   max-width: none;
   height: 100%;
   margin: 0;
+
+  .modal-content {
+    min-height: 100%;
+  }
+}
+
+.modal-bg-dark {
+  background: rgb(18,18,18);
 }

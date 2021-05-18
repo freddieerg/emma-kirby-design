@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -16,11 +18,19 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
               style={{ maxHeight: '2.5em', borderRadius: '1px' }}
               alt="Logo"
               className="mr-0 mr-md-4 mb-3 mb-md-0"
-              src="img/logo.png"
+              src="/img/logo.png"
             />
             <ul className="list-inline text-muted mt-auto mb-2 d-flex d-md-inline-block justify-content-center justify-content-md-start">
-              <li className="list-inline-item">Privacy Policy</li>
-              <li className="list-inline-item">Terms & Conditions</li>
+              <li className="list-inline-item">
+                <Link href="/privacy">
+                  <a>Privacy Policy</a>
+                </Link>
+              </li>
+              <li className="list-inline-item">
+                <Link href="/terms">
+                  <a>Terms & Conditions</a>
+                </Link>
+              </li>
             </ul>
           </Col>
           <Col md={6} className="d-flex justify-content-center justify-content-md-end my-3 my-md-0">
@@ -58,7 +68,7 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
               © {new Date().getFullYear()} Emma Kirby Design
               <span className="d-none d-lg-inline"> | </span>
               <br className="d-lg-none" />
-              Designed by <a href="#">Freddie Ergatoudis</a>
+              Designed by <a href="mailto:freddie.erg@outlook.com">Freddie Ergatoudis</a>
             </span>
           </Col>
           <Col
