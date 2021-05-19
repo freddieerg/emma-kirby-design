@@ -30,7 +30,7 @@ const Home = (): JSX.Element => {
       <div
         className="d-flex flex-grow-1 rounded"
         style={{
-          background: `url("/img/projects/${bgImg}")`,
+          background: `url("/img/projects/village-house-interiors-pool-and-pool-house/hjtyCIv0.jpeg")`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
