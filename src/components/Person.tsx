@@ -20,7 +20,7 @@ const Person = ({ name, position, description, image, socials = {} }: PersonProp
   ));
 
   return (
-    <Container className="my-5">
+    <Container className="mb-5">
       <Row>
         <Col md={{ span: 6, order: 2 }} className="mb-5 mb-md-0">
           <img alt="About Us" className="rounded" style={{ maxWidth: '100%' }} src={image} />

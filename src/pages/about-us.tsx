@@ -14,7 +14,7 @@ const AboutUs = (): JSX.Element => {
         }
         image="/img/misc/studio.jpeg"
       />
-      <section className="pt-md-5">
+      <section className="pt-4 pt-md-5 mt-md-5">
         <Person
           name="Emma Kirby"
           position="Design Director"

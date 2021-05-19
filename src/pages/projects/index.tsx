@@ -31,7 +31,7 @@ const Projects = (): JSX.Element => {
 
   return (
     <>
-      <section className="pb-5">
+      <section>
         <Cover
           title="Projects"
           subtitle={
@@ -43,7 +43,7 @@ const Projects = (): JSX.Element => {
           image="img/projects/listed-village-house-extension-and-pool/rbbqkM-X.jpeg"
         />
       </section>
-      <section>
+      <section className="pt-4 pt-md-5 mt-n4 mt-md-0">
         <Container className="mt-5">
           <Row>{projectMap}</Row>
         </Container>
