@@ -12,7 +12,7 @@ const AboutUs = (): JSX.Element => {
             perfectly suited to their lifestyle demands.
           </>
         }
-        image="img/misc/studio.jpeg"
+        image="/img/misc/studio.jpeg"
       />
       <section className="pt-md-5">
         <Person

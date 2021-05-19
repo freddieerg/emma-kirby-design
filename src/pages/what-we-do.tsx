@@ -17,7 +17,7 @@ const WhatWeDo = (): JSX.Element => {
             of the process and have formed strong working relationships with many trusted and talented people.
           </>
         }
-        image="img/projects/winter-and-summer-barns-with-pool/c8DQ7kLU.jpg"
+        image="/img/projects/winter-and-summer-barns-with-pool/c8DQ7kLU.jpg"
       />
       <Quote
         quote="Interiors are a key part of what we do and whether your home is a country house, an urban apartment, a ski chalet or a house by the coast, if it needs a total redesign to make the most of light and space or simply to redecorate and breathe new life into tired interiors we will handle every detail. Building each layer from electrical and lighting design to furniture, fabrics, floor and wall coverings, we deliver a scheme that will both comfort and inspire."
@@ -37,7 +37,7 @@ const WhatWeDo = (): JSX.Element => {
             seamlessly together giving the client a space in which they can feel comfortable and relaxed.
           </>
         }
-        image="img/projects/soho-farmhouse/BizpASHX.jpeg"
+        image="/img/projects/soho-farmhouse/BizpASHX.jpeg"
       />
       <Quote quote="Home is the comfiest place to be." author="Winnie the Pooh" subtitle="" />
       <Cover
@@ -52,7 +52,7 @@ const WhatWeDo = (): JSX.Element => {
             eyes to new possibilities of what can be achieved.
           </>
         }
-        image="img/projects/winter-and-summer-barns-with-pool/7zSYs8PQ.jpg"
+        image="/img/projects/winter-and-summer-barns-with-pool/7zSYs8PQ.jpg"
       />
       <Quote
         quote="The houses we live in should be both uplifting and comforting; a sanctuary from the outside world and a place to relax and revive. We demand a great deal from where we live, so it is important that the right decisions are made to avoid a waste of both time and money."
@@ -72,7 +72,7 @@ const WhatWeDo = (): JSX.Element => {
             close contact with the client so every aspect is clear and transparent.
           </>
         }
-        image="img/misc/construction.jpg"
+        image="/img/misc/construction.jpg"
       />
     </>
   );

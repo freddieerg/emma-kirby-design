@@ -18,7 +18,7 @@ const Projects = (): JSX.Element => {
             style={{
               width: '100%',
               paddingTop: '56.25%',
-              background: `url("img/projects/${project.id}/${project.thumbnail}") no-repeat center center`,
+              background: `url("/img/projects/${project.id}/${project.thumbnail}") no-repeat center center`,
               backgroundSize: 'cover',
             }}
           />

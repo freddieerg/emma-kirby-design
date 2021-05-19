@@ -16,10 +16,6 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 
     id ? (title = id) : (title = router.pathname.split('/').pop());
 
-    if (router.pathname.includes('[') && !router.query.id) {
-      return 'Emma Kirby Design';
-    }
-
     title = title.split('-').join(' ');
     title = title.replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
     title = title ? title + ' · Emma Kirby Design' : 'Emma Kirby Design';

@@ -51,7 +51,7 @@ const Menu = ({ show, onHide }: MenuProps): JSX.Element => {
               <a>Privacy Policy</a>
             </Link>{' '}
             ·{' '}
-            <Link href="terms">
+            <Link href="/terms">
               <a>Terms & Conditions</a>
             </Link>
           </span>

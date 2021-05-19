@@ -33,7 +33,7 @@ const ContactUs = (): JSX.Element => {
             </Button>
           </>
         }
-        image="img/projects/listed-village-house-extension-and-pool/z-QAOZ4B.jpeg"
+        image="/img/projects/listed-village-house-extension-and-pool/z-QAOZ4B.jpeg"
       />
       <section className="pt-5">
         <Message show={show} onHide={() => setShow(false)} />

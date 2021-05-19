@@ -20,7 +20,7 @@ interface MessageReqInterface {
   message: string;
 }
 
-const renderCallbackReqBody = (data: MessageReqInterface): string => {
+const renderBodyHtml = (data: MessageReqInterface): string => {
   return renderToStaticMarkup(
     <>
       <b>Name:</b> {data.name}
@@ -53,7 +53,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
     to: process.env.STAGE === 'dev' ? 'freddie.erg@outlook.com' : 'enquiries@emmakirbydesign.co.uk',
     subject: subject,
     replyTo: email,
-    html: renderCallbackReqBody(req.body),
+    html: renderBodyHtml(req.body),
   });
   res.status(200).send(null);
 };
