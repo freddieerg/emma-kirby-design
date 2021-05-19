@@ -28,12 +28,9 @@ const Home = (): JSX.Element => {
   return (
     <Container fluid className="d-flex" style={{ marginBottom: '15px' }}>
       <div
-        className="d-flex flex-grow-1 rounded"
+        className="d-flex flex-grow-1 rounded bg-image"
         style={{
-          background: `url("/img/projects/village-house-interiors-pool-and-pool-house/hjtyCIv0.jpeg")`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center center',
+          background: `url("/img/projects/${bgImg}")`,
         }}
       />
     </Container>
