@@ -25,7 +25,7 @@ const EKDNavbar = (): JSX.Element => {
       <Menu show={showMenu} onHide={() => setShowMenu(false)} />
       <Container fluid className="pb-3" style={{ zIndex: 10000 }}>
         <Row>
-          <Col xs={{ span: 3, order: 0 }} sm={{ span: 3, order: 0 }} className="d-flex align-items-center">
+          <Col xs={{ span: 3, order: 0 }} sm={{ span: 2, order: 0 }} className="d-flex align-items-center">
             <Link href="/">
               <a>
                 <img
@@ -65,7 +65,7 @@ const EKDNavbar = (): JSX.Element => {
               </li>
             </ul>
           </Col>
-          <Col sm={6} className="d-none d-sm-flex justify-content-center align-items-center">
+          <Col sm={8} className="d-none d-sm-flex justify-content-center align-items-center">
             <Link href="/">
               <a>
                 <h3 style={{ marginBottom: '0' }} className="font-weight-bold hover-brighten text-center">
@@ -76,7 +76,7 @@ const EKDNavbar = (): JSX.Element => {
               </a>
             </Link>
           </Col>
-          <Col xs={{ span: 3, order: 2 }} sm={3} className="d-flex align-items-center justify-content-end">
+          <Col xs={{ span: 3, order: 2 }} sm={2} className="d-flex align-items-center justify-content-end">
             <button
               onClick={() => setShowMenu(!showMenu)}
               className={`d-flex align-items-center pb-2 pl-2 pt-2 hamburger hamburger--spin-r ${
