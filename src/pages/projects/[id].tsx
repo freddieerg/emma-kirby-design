@@ -77,7 +77,7 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
                       style={{ cursor: 'pointer' }}
                     >
                       <div
-                        className="rounded my-3"
+                        className="rounded my-3 project-img"
                         style={{
                           width: '100%',
                           paddingTop: '80%',
