@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { Parallax } from 'react-parallax';
@@ -77,15 +76,15 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
                       onClick={open}
                       style={{ cursor: 'pointer' }}
                     >
-                      <div style={{ paddingTop: '80%', width: '100%' }}>
-                        <Image
-                          className="p-3 project-img"
-                          src={`/img/projects/${project.id}/${src}`}
-                          layout="fill"
-                          objectFit="cover"
-                          alt="cover-img"
-                        />
-                      </div>
+                      <div
+                        className="rounded my-3"
+                        style={{
+                          width: '100%',
+                          paddingTop: '80%',
+                          background: `url("/img/projects/${project.id}/${src}") no-repeat center center`,
+                          backgroundSize: 'cover',
+                        }}
+                      />
                     </Col>
                   )}
                 </Item>
