@@ -40,7 +40,7 @@ const Projects = (): JSX.Element => {
               pools and potting sheds. A taste of what we do.
             </>
           }
-          image="img/projects/listed-village-house-extension-and-pool/rbbqkM-X.jpeg"
+          image="/img/projects/listed-village-house-extension-and-pool/rbbqkM-X.jpeg"
         />
       </section>
       <section className="pt-4 pt-md-5 mt-n4 mt-md-0">

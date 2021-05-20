@@ -1,3 +1,11 @@
-a, .img-link {
+a, .img-link, .project-img {
   transition: 0.3s;
+  transition-timing-function: cubic-bezier(.11,1.13,.98,.98);
+}
+
+.project-img {
+  border-radius: 20px;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
