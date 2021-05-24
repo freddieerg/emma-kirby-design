@@ -33,6 +33,10 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
           />
           <link rel="icon" type="image/png" href="/icons/favicon.png" />
           <title>{title()}</title>
+          <meta
+            name="description"
+            content="Design Studio based in Oxfordshire offering Interior Design, Architectural Design, Bespoke Furniture Design, Development Consultancy, Project Management."
+          />
         </Head>
         <Navbar />
         <main className={`${router.pathname === '/' ? 'd-flex flex-grow-1' : ''}`}>{children}</main>
