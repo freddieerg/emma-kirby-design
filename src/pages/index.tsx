@@ -20,6 +20,13 @@ const Home = (): JSX.Element => {
       'village-house-interiors-pool-and-pool-house/hjtyCIv0.jpeg',
       'village-house-interiors-pool-and-pool-house/u0xthdMZ.jpeg',
       'village-house-interiors-pool-and-pool-house/JASEW__k.jpeg',
+      'barn-redesign-and-renovation/EK2-min.jpg',
+      'barn-redesign-and-renovation/EK4-min.jpg',
+      'barn-redesign-and-renovation/EK5-min.jpg',
+      'barn-redesign-and-renovation/EK6-min.jpg',
+      'barn-redesign-and-renovation/EK11-min.jpg',
+      'barn-redesign-and-renovation/EK12-min.jpg',
+      'barn-redesign-and-renovation/EK19-min.jpg',
     ];
 
     setBgImg(imagePool[Math.floor(Math.random() * imagePool.length)]);
