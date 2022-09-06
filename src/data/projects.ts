@@ -16,6 +16,13 @@ class Project {
 
 const projects = [
   new Project(
+    'barn-redesign-and-renovation',
+    'Barn Redesign & Renovation',
+    'Malvern Hills',
+    'It is always lovely when clients return to us with new projects. Having previously worked with them on their weekend home in the area we were delighted to be asked to redesign, renovate, build and decorate this breath taking barn at the foot of the Malvern Hills for them. A growing family and a wish for more space meant a permanent move from the capital to the countryside and sadly, their much loved weekend bolt hole was not going to be big enough.\n\nThe barn they found is vast and it was a bit of an overwhelming prospect for the family. They loved the scale of the buildings but they wanted our team to make it cosy for the four of them as well as an epic entertaining space for bigger gatherings. Much of the beauty of the original beauty of the building had been lost behind modern insulation, poor glazing and stark flooring. Contemporary partition walls had broken up its natural flow and a mezzanine office blocked light and took away from the scale of the building.\n\nWorking closely with the heritage planners we were able to achieve what we set out to. By removing metres of contemporary stainless steel walkways and staircases that blocked views and felt cold we revealed the extraordinary architectural features of the barn.  After our brilliant team of builders under the expert eye of one of our incredibly talented Project Managers, we stripped back and repaired and then started to rebuild. Adding layer upon layer to create the clients’ perfect home. New windows, antique flooring, large fireplaces to our design, traditionally made bespoke joinery, furniture and lighting all added together to make a warm and welcoming home that feels like it has evolved over time.\n\nIt has been a wonderful project of collaboration with the clients and as times changed with Covid, so did our brief. A music studio was built,  a swimming pool added into one of the courtyards and a tennis court will be come next. It really is the perfect country home that works as well with two people in it as it does with a huge party. We are only sad that this could be the last project with our wonderful clients as they can’t ever see themselves leaving!',
+    'EK2-min.jpg',
+  ),
+  new Project(
     'winter-and-summer-barns-with-pool',
     'Winter & Summer Barns With Pool',
     'Oxfordshire',

@@ -40,7 +40,7 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
         >
           <div
             className="d-flex text-center justify-content-center align-items-center flex-column"
-            style={{ height: '500px', background: 'rgba(16,16,16,0.7)' }}
+            style={{ height: '75vh', background: 'rgba(16,16,16,0.7)' }}
           >
             <h1>{project.title}</h1>
             <h4>{project.subtitle}</h4>

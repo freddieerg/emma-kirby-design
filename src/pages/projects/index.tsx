@@ -10,7 +10,7 @@ import { projects } from '../../data/projects';
 
 const Projects = (): JSX.Element => {
   const projectMap = projects.map((project) => (
-    <Col md={6} key={project.id} className="text-center mb-4">
+    <Col md={4} key={project.id} className="text-center mb-4">
       <Link href={`projects/${project.id}`}>
         <a>
           <div
@@ -44,7 +44,7 @@ const Projects = (): JSX.Element => {
         />
       </section>
       <section className="pt-4 pt-md-5 mt-n4 mt-md-0">
-        <Container className="mt-5">
+        <Container className="mt-5 p-md-5 p-0" fluid>
           <Row>{projectMap}</Row>
         </Container>
       </section>
