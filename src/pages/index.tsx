@@ -27,6 +27,9 @@ const Home = (): JSX.Element => {
       'barn-redesign-and-renovation/EK11-min.jpg',
       'barn-redesign-and-renovation/EK12-min.jpg',
       'barn-redesign-and-renovation/EK19-min.jpg',
+      'barn-redesign-and-renovation/EK27-min.jpg',
+      'barn-redesign-and-renovation/EK30-min.jpg',
+      'barn-redesign-and-renovation/EK40-min.jpg',
     ];
 
     setBgImg(imagePool[Math.floor(Math.random() * imagePool.length)]);
