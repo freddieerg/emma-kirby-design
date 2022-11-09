@@ -72,7 +72,7 @@ const WhatWeDo = (): JSX.Element => {
             close contact with the client so every aspect is clear and transparent.
           </>
         }
-        image="/img/misc/construction.jpg"
+        image="/img/misc/vans.jpg"
       />
     </>
   );
