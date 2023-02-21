@@ -3,7 +3,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.zoho.eu',
+  host: 'smtp.gmail.com',
   port: 587,
   secure: false,
   auth: {
