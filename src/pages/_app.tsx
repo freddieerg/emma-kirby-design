@@ -1,12 +1,10 @@
 import type { AppProps } from 'next/app';
-
 import Layout from '../components/Layout';
-
 import NextNprogress from 'nextjs-progressbar';
-
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'socicon/css/socicon.css';
 import '../scss/style.scss';
+import { Analytics } from '@vercel/analytics/react';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
@@ -21,6 +19,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
       <Layout {...pageProps}>
         <Component {...pageProps} />
       </Layout>
+      <Analytics />
     </>
   );
 };
