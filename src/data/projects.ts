@@ -19,7 +19,13 @@ const projects = [
     'farmhouse-renovation-and-converted-barns-with-pool',
     'Farmhouse Renovation and Converted Barns With Pool',
     'Cotswolds',
-    '',
+    "Our brief was to reimagine our clients' former family home to create a comfortable and relaxed weekend retreat where they and their three adult sons could gather to enjoy family breaks and shared leisure facilities but each have independent accommodation.\n" +
+      '\n' +
+      'The renovated and extended farmhouse, surrounded by landscaped gardens, orchard and paddocks, remains the heart of this traditional Cotswold farmstead, a tranquil and generous home for the extended family. Further accommodation is provided in the shape of two converted stone barns, clustered around the former farmyard.\n' +
+      '\n' +
+      'A steel framed Dutch barn has been converted to add shared leisure facilities, including a large party space at first floor level with an expanse of glazed doors opening onto a raised pool terrace with infinity pool and far reaching views over the beautiful Cotswold countryside. Downstairs features a small home cinema, gym, spa facilities and changing for the pool and invisible all-weather tennis court, tucked away in the gardens.\n' +
+      '\n' +
+      'The design ethos is restrained, limiting alterations to the traditional Grade II listed structures wherever possible. The emphasis is on retained original features and the celebrating of simple vernacular materials and details, especially the warm honey coloured Cotswold rubblestone walls, timeworn limestone flagstones, rich oak floorboards and soft limewashed plaster, complemented by functional steel Crittall style windows and exposed structural steelwork.\n',
     '0.jpg',
   ),
   new Project(
