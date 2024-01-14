@@ -25,7 +25,7 @@ const projects = [
       '\n' +
       'A steel framed Dutch barn has been converted to add shared leisure facilities, including a large party space at first floor level with an expanse of glazed doors opening onto a raised pool terrace with infinity pool and far reaching views over the beautiful Cotswold countryside. Downstairs features a small home cinema, gym, spa facilities and changing for the pool and invisible all-weather tennis court, tucked away in the gardens.\n' +
       '\n' +
-      'The design ethos is restrained, limiting alterations to the traditional Grade II listed structures wherever possible. The emphasis is on retained original features and the celebrating of simple vernacular materials and details, especially the warm honey coloured Cotswold rubblestone walls, timeworn limestone flagstones, rich oak floorboards and soft limewashed plaster, complemented by functional steel Crittall style windows and exposed structural steelwork.\n',
+      'The design ethos is restrained, limiting alterations to the traditional Grade II listed structures wherever possible. The emphasis is on retained original features and the celebration of simple vernacular materials and details, especially the warm honey coloured Cotswold rubblestone walls, timeworn limestone flagstones, rich oak floorboards and soft limewashed plaster, complemented by functional steel Crittall style windows and exposed structural steelwork.\n',
     '0.jpg',
   ),
   new Project(

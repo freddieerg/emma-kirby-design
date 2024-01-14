@@ -30,8 +30,10 @@ const Projects = (): JSX.Element => {
           </div>
         </a>
       </Link>
-      <h5>{project.title}</h5>
-      <p className="text-muted">{project.subtitle}</p>
+      <div className="mx-5">
+        <h5>{project.title}</h5>
+        <p className="text-muted">{project.subtitle}</p>
+      </div>
     </Col>
   ));
 

@@ -41,8 +41,8 @@ const getServerSideProps = (): { props: { backgroundImg: string } } => {
     'farmhouse-renovation-and-converted-barns-with-pool/0.jpg',
     'farmhouse-renovation-and-converted-barns-with-pool/4.jpg',
     'farmhouse-renovation-and-converted-barns-with-pool/10.jpg',
-    'farmhouse-renovation-and-converted-barns-with-pool/10.jpg',
     'farmhouse-renovation-and-converted-barns-with-pool/12.jpg',
+    'farmhouse-renovation-and-converted-barns-with-pool/14.jpg',
     'farmhouse-renovation-and-converted-barns-with-pool/15.jpg',
   ];
 
