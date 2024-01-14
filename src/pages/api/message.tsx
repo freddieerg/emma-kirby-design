@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { renderToStaticMarkup } from 'react-dom/server';
 import nodemailer from 'nodemailer';
+import { renderToStaticMarkup } from 'react-dom/server';
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.zoho.eu',

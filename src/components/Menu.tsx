@@ -17,27 +17,27 @@ const Menu = ({ show, onHide }: MenuProps): JSX.Element => {
     >
       <Modal.Body className="d-flex justify-content-center align-items-center">
         <ul className="list-inline d-inline-block text-center h3 py-4">
-          <Link href="/">
+          <Link legacyBehavior href="/">
             <a>
               <li className="py-1">Home</li>
             </a>
           </Link>
-          <Link href="/about-us">
+          <Link legacyBehavior href="/about-us">
             <a>
               <li className="py-1">About Us</li>
             </a>
           </Link>
-          <Link href="/what-we-do">
+          <Link legacyBehavior href="/what-we-do">
             <a>
               <li className="py-1">What We Do</li>
             </a>
           </Link>
-          <Link href="/projects">
+          <Link legacyBehavior href="/projects">
             <a>
               <li className="py-1">Projects</li>
             </a>
           </Link>
-          <Link href="/contact-us">
+          <Link legacyBehavior href="/contact-us">
             <a>
               <li className="py-1">Contact Us</li>
             </a>
@@ -47,11 +47,11 @@ const Menu = ({ show, onHide }: MenuProps): JSX.Element => {
       <Modal.Footer className="border-0 justify-content-center text-center">
         <p className="text-muted small">
           <span className="h5">
-            <Link href="/privacy">
+            <Link legacyBehavior href="/privacy">
               <a>Privacy Policy</a>
             </Link>{' '}
             ·{' '}
-            <Link href="/terms">
+            <Link legacyBehavior href="/terms">
               <a>Terms & Conditions</a>
             </Link>
           </span>

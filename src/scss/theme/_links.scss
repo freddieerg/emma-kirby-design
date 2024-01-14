@@ -1,6 +1,7 @@
 a, .img-link, .project-img {
   transition: 0.3s;
   transition-timing-function: cubic-bezier(.11,1.13,.98,.98);
+  text-decoration: none !important;
 }
 
 .project-img {

@@ -7,21 +7,27 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { projects } from '../../data/projects';
+import Image from 'next/image';
 
 const Projects = (): JSX.Element => {
   const projectMap = projects.map((project) => (
     <Col md={4} key={project.id} className="text-center mb-4">
-      <Link href={`projects/${project.id}`}>
+      <Link className="position-relative" legacyBehavior href={`projects/${project.id}`}>
         <a>
           <div
-            className="rounded mb-4 shadow img-link"
+            className="rounded mb-4 shadow img-link position-relative overflow-hidden"
             style={{
               width: '100%',
               paddingTop: '56.25%',
-              background: `url("/img/projects/${project.id}/${project.thumbnail}") no-repeat center center`,
-              backgroundSize: 'cover',
             }}
-          />
+          >
+            <Image
+              src={`/img/projects/${project.id}/${project.thumbnail}`}
+              fill
+              alt={project.title}
+              objectFit="cover"
+            />
+          </div>
         </a>
       </Link>
       <h5>{project.title}</h5>

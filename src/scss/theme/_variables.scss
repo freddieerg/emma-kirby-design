@@ -85,9 +85,9 @@ $theme-colors: map-merge(
 
 
 $body-bg: #252525;
-$body-color: theme-color("primary");
+$body-color: $primary;
 
-$link-color: theme-color("primary") !default;
+$link-color: $primary !default;
 $link-hover-decoration: none !default;
 
 $font-family-base: athelas !default;
@@ -102,11 +102,13 @@ $list-inline-padding:         1.2rem !default;
 $input-bg:                              transparent !default;
 $input-disabled-bg:                     transparent !default;
 
-$input-color:                           theme-color("primary") !default;
-$input-border-color:                    theme-color("primary") !default;
+$input-color:                           $primary !default;
+$input-border-color:                    $primary !default;
 
 $input-focus-bg:                        transparent !default;
-$input-focus-border-color:              theme-color("primary") !default;
-$input-focus-color:                     theme-color("primary") !default;
+$input-focus-border-color:              $primary !default;
+$input-focus-color:                     $primary !default;
 $input-focus-width:                     0px !default;
 $input-focus-box-shadow:                none !default;
+
+$enable-negative-margins: true

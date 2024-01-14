@@ -13,21 +13,21 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
     <footer className="py-5 small">
       <Container>
         <Row>
-          <Col md={6} className="text-center text-md-left">
+          <Col md={6} className="text-md-left">
             <img
               style={{ maxHeight: '2.5em', borderRadius: '1px' }}
               alt="Logo"
-              className="mr-0 mr-md-4 mb-3 mb-md-0"
+              className="me-0 me-md-4 mb-3 mb-md-0"
               src="/img/logo.png"
             />
             <ul className="list-inline text-muted mt-auto mb-2 d-flex d-md-inline-block justify-content-center justify-content-md-start">
               <li className="list-inline-item">
-                <Link href="/privacy">
+                <Link legacyBehavior href="/privacy">
                   <a>Privacy Policy</a>
                 </Link>
               </li>
               <li className="list-inline-item">
-                <Link href="/terms">
+                <Link legacyBehavior href="/terms">
                   <a>Terms & Conditions</a>
                 </Link>
               </li>

@@ -1,17 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-
-import { Parallax } from 'react-parallax';
+import { Background, Parallax } from 'react-parallax';
 import { Gallery, Item } from 'react-photoswipe-gallery';
-
 import ProjectClass, { projects } from '../../data/projects';
-
 import fs from 'fs';
 import sizeOf from 'image-size';
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { MutableRefObject } from 'react';
+import Image from 'next/image';
 
 interface ProjectPropsImage {
   src: string;
@@ -31,13 +27,17 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
   return (
     <>
       <section>
-        <Parallax
-          className="mx-sm-n3"
-          bgImage={`/img/projects/${project.id}/${project.thumbnail}`}
-          bgImageAlt="the dog"
-          strength={100}
-          bgImageStyle={{ bottom: '-20%' }}
-        >
+        <Parallax className="mx-sm-n3" strength={100} style={{ height: '75vh' }}>
+          <Background>
+            <div className="d-flex" style={{ height: '80vh', width: '100vw' }}>
+              <Image
+                src={`/img/projects/${project.id}/${project.thumbnail}`}
+                alt={project.title}
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          </Background>
           <div
             className="d-flex text-center justify-content-center align-items-center flex-column"
             style={{ height: '75vh', background: 'rgba(16,16,16,0.7)' }}
@@ -47,44 +47,39 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
           </div>
         </Parallax>
       </section>
-      <section className="mt-5">
-        <Container>
-          <h2>About the Project</h2>
-          <hr />
-          <p style={{ lineHeight: 1.5, fontSize: 18, whiteSpace: 'pre-wrap' }}>{project.description}</p>
-        </Container>
-      </section>
+      {project.description && (
+        <section className="mt-5">
+          <Container>
+            <h2>About the Project</h2>
+            <hr />
+            <p style={{ lineHeight: 1.5, fontSize: 18, whiteSpace: 'pre-wrap' }}>{project.description}</p>
+          </Container>
+        </section>
+      )}
       <section className="mt-5">
         <Container>
           <h2>Gallery</h2>
           <hr />
           <Row>
-            <Gallery options={{ showAnimationDuration: 0, hideAnimationDuration: 0 }}>
+            <Gallery options={{ showAnimationDuration: 0, hideAnimationDuration: 0, bgOpacity: 1 }}>
               {images.map(({ src, meta }) => (
-                <Item
-                  key={src}
-                  original={`/img/projects/${project.id}/${src}`}
-                  width={meta.width}
-                  height={meta.height}
-                  thumbnail={`/img/projects/${project.id}/${src}`}
-                >
+                <Item key={src} height={meta.height} width={meta.width} original={`/img/projects/${project.id}/${src}`}>
                   {({ ref, open }) => (
-                    <Col
-                      md={6}
-                      lg={4}
-                      ref={ref as MutableRefObject<HTMLInputElement>}
-                      onClick={open}
-                      style={{ cursor: 'pointer' }}
-                    >
+                    <Col md={6} lg={4} ref={ref} onClick={open} style={{ cursor: 'pointer' }}>
                       <div
-                        className="rounded my-3 project-img"
+                        className="rounded my-3 project-img position-relative overflow-hidden"
                         style={{
                           width: '100%',
                           paddingTop: '80%',
-                          background: `url("/img/projects/${project.id}/${src}") no-repeat center center`,
-                          backgroundSize: 'cover',
                         }}
-                      />
+                      >
+                        <Image
+                          src={`/img/projects/${project.id}/${src}`}
+                          alt={project.title}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </div>
                     </Col>
                   )}
                 </Item>

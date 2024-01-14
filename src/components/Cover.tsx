@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Image from 'next/image';
 
 interface CoverProps {
   title: string;
@@ -11,17 +12,18 @@ interface CoverProps {
 
 const Cover = ({ title, subtitle, image, flip }: CoverProps): JSX.Element => {
   return (
-    <Container fluid className="d-flex w-auto px-sm-0 cover">
+    <Container fluid className="d-flex px-sm-0 cover">
       <Row className="no-gutter">
-        <Col
-          className="d-flex cover-img"
-          lg={6}
-          md={{ span: 4, order: flip ? 1 : 0 }}
-          style={{
-            background: `url("${image}") no-repeat center center`,
-            backgroundSize: 'cover',
-          }}
-        />
+        <Col className="d-flex cover-img position-relative" lg={6} md={{ span: 4, order: flip ? 1 : 0 }}>
+          <Image
+            src={image}
+            alt={title}
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+          />
+        </Col>
         <Col
           lg={6}
           md={8}

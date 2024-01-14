@@ -26,7 +26,7 @@ const EKDNavbar = (): JSX.Element => {
       <Container fluid className="pb-3" style={{ zIndex: 10000 }}>
         <Row>
           <Col xs={{ span: 3, order: 0 }} sm={{ span: 2, order: 0 }} className="d-flex align-items-center">
-            <Link href="/">
+            <Link legacyBehavior href="/">
               <a>
                 <img
                   className="hover-brighten"
@@ -66,9 +66,9 @@ const EKDNavbar = (): JSX.Element => {
             </ul>
           </Col>
           <Col sm={8} className="d-none d-sm-flex justify-content-center align-items-center">
-            <Link href="/">
+            <Link legacyBehavior href="/">
               <a>
-                <h3 style={{ marginBottom: '0' }} className="font-weight-bold hover-brighten text-center">
+                <h3 style={{ marginBottom: '0' }} className="fw-bold hover-brighten text-center">
                   <span style={{ fontSize: '30px' }}>E</span>mma
                   <span style={{ fontSize: '30px' }}> K</span>irby
                   <span style={{ fontSize: '30px' }}> D</span>esign

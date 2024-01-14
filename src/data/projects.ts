@@ -16,6 +16,13 @@ class Project {
 
 const projects = [
   new Project(
+    'farmhouse-renovation-and-converted-barns-with-pool',
+    'Farmhouse Renovation and Converted Barns With Pool',
+    'Cotswolds',
+    '',
+    '0.jpg',
+  ),
+  new Project(
     'barn-redesign-and-renovation',
     'Barn Redesign & Renovation',
     'Malvern Hills',

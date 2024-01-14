@@ -54,8 +54,13 @@ const Message = ({ show, onHide }: MessageProps): JSX.Element => {
         dialogClassName="modal-fullscreen"
         contentClassName="modal-bg-dark border-0"
       >
-        <Modal.Body className="p-0 d-flex align-items-center">
-          <Container>
+        <Modal.Body className="p-0 d-md-flex align-items-center pt-4 pt-md-0">
+          <Container fluid>
+            <Row>
+              <Col md={{ span: 10, offset: 1 }} lg={{ span: 8, offset: 2 }}>
+                <h1 className="mb-4 mb-md-5">Send Us a Message</h1>
+              </Col>
+            </Row>
             <Row>
               <Col md={{ span: 10, offset: 1 }} lg={{ span: 8, offset: 2 }}>
                 <div className={`${hasSubmit ? '' : 'd-none'}`}>
@@ -71,7 +76,7 @@ const Message = ({ show, onHide }: MessageProps): JSX.Element => {
                 </div>
                 <fieldset disabled={isSubmitting}>
                   <Form onSubmit={handleSubmit(onSubmit)} className={`${hasSubmit ? 'd-none' : ''}`}>
-                    <Row>
+                    <Row className="gy-3 gx-4">
                       <Col md={6}>
                         <Form.Group>
                           <Form.Label htmlFor="name">Name</Form.Label>
@@ -84,8 +89,6 @@ const Message = ({ show, onHide }: MessageProps): JSX.Element => {
                           <Form.Control {...register('email')} type="email" required />
                         </Form.Group>
                       </Col>
-                    </Row>
-                    <Row>
                       <Col md={4}>
                         <Form.Group>
                           <Form.Label htmlFor="tel">Contact Number</Form.Label>
@@ -98,8 +101,6 @@ const Message = ({ show, onHide }: MessageProps): JSX.Element => {
                           <Form.Control {...register('subject')} type="text" required />
                         </Form.Group>
                       </Col>
-                    </Row>
-                    <Row>
                       <Col md={12}>
                         <Form.Group>
                           <Form.Label htmlFor="message">Your Message</Form.Label>
@@ -107,9 +108,9 @@ const Message = ({ show, onHide }: MessageProps): JSX.Element => {
                         </Form.Group>
                       </Col>
                     </Row>
-                    <Row className="mt-md-4">
+                    <Row className="mt-3">
                       <Col>
-                        <Button type="submit" className="mr-3 px-5">
+                        <Button type="submit" className="me-3 px-5">
                           {isSubmitting ? <Spinner as="span" animation="border" size="sm" /> : 'Send Message'}
                         </Button>
                         <Button className="px-5" onClick={onHide}>
