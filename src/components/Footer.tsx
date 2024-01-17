@@ -14,12 +14,14 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
       <Container>
         <Row>
           <Col md={6} className="text-md-left">
-            <img
-              style={{ maxHeight: '2.5em', borderRadius: '1px' }}
-              alt="Logo"
-              className="me-0 me-md-4 mb-3 mb-md-0"
-              src="/img/logo.png"
-            />
+            <div className="d-flex d-md-inline justify-content-center justify-content-md-start">
+              <img
+                style={{ maxHeight: '2.5em', borderRadius: '1px' }}
+                alt="Logo"
+                className="me-0 me-md-4 mb-3 mb-md-0"
+                src="/img/logo.png"
+              />
+            </div>
             <ul className="list-inline text-muted mt-auto mb-2 d-flex d-md-inline-block justify-content-center justify-content-md-start">
               <li className="list-inline-item">
                 <Link legacyBehavior href="/privacy">
@@ -63,7 +65,7 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
           </Col>
         </Row>
         <Row className={`mt-4 ${small ? 'd-none' : ''}`}>
-          <Col md={6} className="d-flex justify-content-center justify-content-md-start text-center text-md-left">
+          <Col md={6} className="d-flex justify-content-center justify-content-md-start text-center text-md-start">
             <span className="text-muted">
               © {new Date().getFullYear()} Emma Kirby Design
               <span className="d-none d-lg-inline"> | </span>
@@ -73,7 +75,7 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
           </Col>
           <Col
             md={6}
-            className="d-flex justify-content-center justify-content-md-end mt-4 mt-md-0 text-center text-md-right"
+            className="d-flex justify-content-center justify-content-md-end mt-4 mt-md-0 text-center text-md-end"
           >
             <span className="text-muted">
               The Coach House Studio, Home Farm<span className="d-none d-lg-inline">, </span>

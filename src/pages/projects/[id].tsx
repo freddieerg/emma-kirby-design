@@ -78,6 +78,7 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
                           alt={project.title}
                           fill
                           style={{ objectFit: 'cover' }}
+                          sizes="(min-width: 808px) 50vw, 100vw"
                         />
                       </div>
                     </Col>

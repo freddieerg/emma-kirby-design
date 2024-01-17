@@ -38,12 +38,12 @@ const getServerSideProps = (): { props: { backgroundImg: string } } => {
     'barn-redesign-and-renovation/EK27-min.jpg',
     'barn-redesign-and-renovation/EK30-min.jpg',
     'barn-redesign-and-renovation/EK40-min.jpg',
-    'farmhouse-renovation-and-converted-barns-with-pool/0.jpg',
-    'farmhouse-renovation-and-converted-barns-with-pool/4.jpg',
-    'farmhouse-renovation-and-converted-barns-with-pool/10.jpg',
-    'farmhouse-renovation-and-converted-barns-with-pool/12.jpg',
-    'farmhouse-renovation-and-converted-barns-with-pool/14.jpg',
-    'farmhouse-renovation-and-converted-barns-with-pool/15.jpg',
+    'farmhouse-renovation-and-converted-barns-with-pool/0c9675.webp',
+    'farmhouse-renovation-and-converted-barns-with-pool/6d8be0.webp',
+    'farmhouse-renovation-and-converted-barns-with-pool/7b447a.webp',
+    'farmhouse-renovation-and-converted-barns-with-pool/865bf1.webp',
+    'farmhouse-renovation-and-converted-barns-with-pool/45920f.webp',
+    'farmhouse-renovation-and-converted-barns-with-pool/a5f8ee.webp',
   ];
 
   return {

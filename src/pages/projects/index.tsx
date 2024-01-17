@@ -52,7 +52,7 @@ const Projects = (): JSX.Element => {
         />
       </section>
       <section className="pt-4 pt-md-5 mt-n4 mt-md-0">
-        <Container className="mt-5 p-md-5 p-0" fluid>
+        <Container className="mt-5 p-md-5 p-0 px-4" fluid>
           <Row>{projectMap}</Row>
         </Container>
       </section>

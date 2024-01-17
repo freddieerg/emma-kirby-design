@@ -37,34 +37,7 @@ const EKDNavbar = (): JSX.Element => {
               </a>
             </Link>
           </Col>
-          <Col xs={{ span: 6, order: 1 }} className="d-sm-none d-flex align-items-center justify-content-center">
-            <ul className="social-list list-inline text-muted mb-0">
-              <li className="list-inline-item">
-                <a href="https://www.instagram.com/emmakirbydesign/" target="_blank" rel="noreferrer">
-                  <i className="socicon socicon-instagram icon" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="https://www.pinterest.co.uk/emmakirbydesign/" target="_blank" rel="noreferrer">
-                  <i className="socicon socicon-pinterest icon" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a
-                  href="https://www.houzz.co.uk/professionals/interior-designers/emma-kirby-design-pfvwgb-pf~1703863429"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="socicon socicon-houzz icon" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a href="mailto:enquiries@emmakirbydesign.co.uk" target="_blank" rel="noreferrer">
-                  <i className="socicon socicon-mail icon" />
-                </a>
-              </li>
-            </ul>
-          </Col>
+          <Col xs={{ span: 6, order: 1 }} className="d-sm-none d-flex align-items-center justify-content-center"></Col>
           <Col sm={8} className="d-none d-sm-flex justify-content-center align-items-center">
             <Link legacyBehavior href="/">
               <a>
