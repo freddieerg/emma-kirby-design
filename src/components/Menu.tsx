@@ -45,7 +45,7 @@ const Menu = ({ show, onHide }: MenuProps): JSX.Element => {
         </ul>
       </Modal.Body>
       <Modal.Footer className="border-0 justify-content-center text-center">
-        <p className="text-muted small">
+        <p className="small">
           <span className="h5">
             <Link legacyBehavior href="/privacy">
               <a>Privacy Policy</a>
@@ -55,7 +55,7 @@ const Menu = ({ show, onHide }: MenuProps): JSX.Element => {
               <a>Terms & Conditions</a>
             </Link>
           </span>
-          <br />© 2021 Emma Kirby Design | Designed by Freddie Ergatoudis
+          <div className="mt-3">© {new Date().getFullYear()} Emma Kirby Design</div>
         </p>
       </Modal.Footer>
     </Modal>

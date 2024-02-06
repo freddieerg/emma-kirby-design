@@ -22,7 +22,7 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
                 src="/img/logo.png"
               />
             </div>
-            <ul className="list-inline text-muted mt-auto mb-2 d-flex d-md-inline-block justify-content-center justify-content-md-start">
+            <ul className="list-inline mt-auto mb-2 d-flex d-md-inline-block justify-content-center justify-content-md-start">
               <li className="list-inline-item">
                 <Link legacyBehavior href="/privacy">
                   <a>Privacy Policy</a>
@@ -36,7 +36,7 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
             </ul>
           </Col>
           <Col md={6} className="d-flex justify-content-center justify-content-md-end my-3 my-md-0">
-            <ul className="social-list list-inline text-muted d-inline-block m-0">
+            <ul className="social-list list-inline d-inline-block m-0">
               <li className="list-inline-item d-inline-block">
                 <a href="https://www.instagram.com/emmakirbydesign/" target="_blank" rel="noreferrer">
                   <i className="socicon socicon-instagram icon" />
@@ -66,7 +66,7 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
         </Row>
         <Row className={`mt-4 ${small ? 'd-none' : ''}`}>
           <Col md={6} className="d-flex justify-content-center justify-content-md-start text-center text-md-start">
-            <span className="text-muted">
+            <span>
               © {new Date().getFullYear()} Emma Kirby Design
               <span className="d-none d-lg-inline"> | </span>
               <br className="d-lg-none" />
@@ -77,7 +77,7 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
             md={6}
             className="d-flex justify-content-center justify-content-md-end mt-4 mt-md-0 text-center text-md-end"
           >
-            <span className="text-muted">
+            <span>
               The Coach House Studio, Home Farm<span className="d-none d-lg-inline">, </span>
               <br className="d-lg-none" />
               Grafton, Bampton, OX18 2RY
