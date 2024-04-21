@@ -1,7 +1,13 @@
 import Cover from '../components/Cover';
 import Person from '../components/Person';
+import { GetStaticProps } from 'next';
+import { ContentTypeBase, getCMSTeamMembers, Project, TeamMember } from '../utils/cms';
 
-const AboutUs = (): JSX.Element => {
+interface AboutUsPageProps {
+  teamMembers: ContentTypeBase<TeamMember>[];
+}
+
+const AboutUsPage = ({ teamMembers }: AboutUsPageProps): JSX.Element => {
   return (
     <>
       <Cover
@@ -15,6 +21,20 @@ const AboutUs = (): JSX.Element => {
         image="/img/misc/studio.jpeg"
       />
       <section className="pt-4 pt-md-5 mt-md-5">
+        {teamMembers.map((tm) => (
+          <Person
+            name={tm.attributes.name}
+            position={tm.attributes.role}
+            description={tm.attributes.description}
+            image={process.env.NEXT_PUBLIC_CMS_URL + tm.attributes.photo.data.attributes.url}
+            socials={{
+              mail: tm.attributes.email,
+              instagram: tm.attributes.instagram,
+              pinterest: tm.attributes.pinterest,
+              twitter: tm.attributes.twitter,
+            }}
+          />
+        ))}
         <Person
           name="Emma Kirby"
           position="Design Director"
@@ -42,4 +62,16 @@ const AboutUs = (): JSX.Element => {
   );
 };
 
-export default AboutUs;
+export const getStaticProps: GetStaticProps = async () => {
+  const teamMembers = await getCMSTeamMembers();
+
+  console.log(teamMembers);
+
+  return {
+    props: {
+      teamMembers: teamMembers.data,
+    },
+  };
+};
+
+export default AboutUsPage;

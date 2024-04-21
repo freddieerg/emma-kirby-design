@@ -9,6 +9,17 @@ export interface Project {
   gallery: StrapiBase<StrapiImage[]>;
 }
 
+export interface TeamMember {
+  name: string;
+  role: string;
+  description: string;
+  photo: StrapiBase<StrapiImage>;
+  email: string;
+  instagram?: string;
+  pinterest?: string;
+  twitter?: string;
+}
+
 export interface ContentTypeBase<T> {
   id: null;
   attributes: T;
@@ -53,4 +64,8 @@ export const getCMSProject = async (projectId: string) => {
   });
 
   return r.data.find((project) => project.attributes.projectId === projectId);
+};
+
+export const getCMSTeamMembers = async () => {
+  return cms<StrapiBase<ContentTypeBase<TeamMember>[]>>('/team-members', { params: { 'sort[0]': 'createdAt:asc' } });
 };
