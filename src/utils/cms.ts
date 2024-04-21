@@ -44,12 +44,12 @@ export const cms = async <T>(url: string, config: Partial<AxiosRequestConfig> = 
 };
 
 export const getCMSProjects = async () => {
-  return cms<StrapiBase<ContentTypeBase<Project>[]>>('/projects');
+  return cms<StrapiBase<ContentTypeBase<Project>[]>>('/projects', { params: { 'sort[0]': 'createdAt:asc' } });
 };
 
 export const getCMSProject = async (projectId: string) => {
   const r = await cms<StrapiBase<ContentTypeBase<Project>[]>>('/projects', {
-    params: { populate: '*', '[projectId][$eq]': projectId },
+    params: { '[projectId][$eq]': projectId },
   });
 
   return r.data.find((project) => project.attributes.projectId === projectId);
