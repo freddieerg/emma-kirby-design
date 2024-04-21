@@ -1,29 +1,17 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Background, Parallax } from 'react-parallax';
 import { Gallery, Item } from 'react-photoswipe-gallery';
-import ProjectClass, { projects } from '../../data/projects';
-import fs from 'fs';
-import sizeOf from 'image-size';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'next/image';
+import { ContentTypeBase, getCMSProject, getCMSProjects, Project } from '../../utils/cms';
 
-interface ProjectPropsImage {
-  src: string;
-  meta: {
-    height: number;
-    width: number;
-    type: string;
-  };
+interface ProjectPageProps {
+  project: ContentTypeBase<Project>;
 }
 
-interface ProjectProps {
-  project: ProjectClass;
-  images: ProjectPropsImage[];
-}
-
-const Project = ({ project, images }: ProjectProps): JSX.Element => {
+const ProjectPage = ({ project }: ProjectPageProps): JSX.Element => {
   return (
     <>
       <section>
@@ -31,8 +19,8 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
           <Background>
             <div className="d-flex" style={{ height: '80vh', width: '100vw' }}>
               <Image
-                src={`/img/projects/${project.id}/${project.thumbnail}`}
-                alt={project.title}
+                src={`${process.env.NEXT_PUBLIC_CMS_URL}${project.attributes.thumbnail.data.attributes.url}`}
+                alt={project.attributes.title}
                 fill
                 style={{ objectFit: 'cover' }}
               />
@@ -42,17 +30,17 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
             className="d-flex text-center justify-content-center align-items-center flex-column"
             style={{ height: '75vh', background: 'rgba(16,16,16,0.7)' }}
           >
-            <h1>{project.title}</h1>
-            <h4>{project.subtitle}</h4>
+            <h1>{project.attributes.title}</h1>
+            <h4>{project.attributes.subtitle}</h4>
           </div>
         </Parallax>
       </section>
-      {project.description && (
+      {project.attributes.about && (
         <section className="mt-5">
           <Container>
             <h2>About the Project</h2>
             <hr />
-            <p style={{ lineHeight: 1.5, fontSize: 18, whiteSpace: 'pre-wrap' }}>{project.description}</p>
+            <p style={{ lineHeight: 1.5, fontSize: 18, whiteSpace: 'pre-wrap' }}>{project.attributes.about}</p>
           </Container>
         </section>
       )}
@@ -62,8 +50,13 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
           <hr />
           <Row>
             <Gallery options={{ showAnimationDuration: 0, hideAnimationDuration: 0, bgOpacity: 1 }}>
-              {images.map(({ src, meta }) => (
-                <Item key={src} height={meta.height} width={meta.width} original={`/img/projects/${project.id}/${src}`}>
+              {project.attributes.gallery.data.map((image) => (
+                <Item
+                  key={image.attributes.url}
+                  height={image.attributes.height}
+                  width={image.attributes.width}
+                  original={`${process.env.NEXT_PUBLIC_CMS_URL}${image.attributes.url}`}
+                >
                   {({ ref, open }) => (
                     <Col md={6} lg={4} ref={ref} onClick={open} style={{ cursor: 'pointer' }}>
                       <div
@@ -74,8 +67,8 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
                         }}
                       >
                         <Image
-                          src={`/img/projects/${project.id}/${src}`}
-                          alt={project.title}
+                          src={`${process.env.NEXT_PUBLIC_CMS_URL}${image.attributes.url}`}
+                          alt={project.attributes.title}
                           fill
                           style={{ objectFit: 'cover' }}
                           sizes="(min-width: 808px) 50vw, 100vw"
@@ -94,23 +87,20 @@ const Project = ({ project, images }: ProjectProps): JSX.Element => {
 };
 
 const getStaticPaths: GetStaticPaths = async () => {
-  const paths = projects.map(({ id }) => `/projects/${id}`);
+  const projects = await getCMSProjects();
+  const paths = projects.data.map((project) => `/projects/${project.attributes.projectId}`);
   return { paths, fallback: false };
 };
 
 const getStaticProps: GetStaticProps = async ({ params }) => {
-  const project = projects.find((project) => project.id === params.id);
-  const imageDirs = await fs.promises.readdir(`public/img/projects/${project.id}`);
-
-  const images = imageDirs.map((image) => ({
-    src: image,
-    meta: sizeOf(`public/img/projects/${project.id}/${image}`),
-  }));
+  const project = await getCMSProject(params.id as string);
 
   return {
-    props: { project: JSON.parse(JSON.stringify(project)), images },
+    props: {
+      project,
+    },
   };
 };
 
-export default Project;
+export default ProjectPage;
 export { getStaticPaths, getStaticProps };

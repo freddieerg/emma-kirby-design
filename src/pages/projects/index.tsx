@@ -1,18 +1,16 @@
 import Link from 'next/link';
-
 import Cover from '../../components/Cover';
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-import { projects } from '../../data/projects';
 import Image from 'next/image';
+import { GetStaticProps } from 'next';
+import { ContentTypeBase, getCMSProjects, Project } from '../../utils/cms';
 
-const Projects = (): JSX.Element => {
+const Projects = ({ projects }: { projects: ContentTypeBase<Project>[] }): JSX.Element => {
   const projectMap = projects.map((project) => (
-    <Col md={4} key={project.id} className="text-center mb-4">
-      <Link className="position-relative" legacyBehavior href={`projects/${project.id}`}>
+    <Col md={4} key={project.attributes.projectId} className="text-center mb-4">
+      <Link className="position-relative" legacyBehavior href={`projects/${project.attributes.projectId}`}>
         <a>
           <div
             className="rounded mb-4 shadow img-link position-relative overflow-hidden"
@@ -22,17 +20,17 @@ const Projects = (): JSX.Element => {
             }}
           >
             <Image
-              src={`/img/projects/${project.id}/${project.thumbnail}`}
+              src={`${process.env.NEXT_PUBLIC_CMS_URL}${project.attributes.thumbnail.data.attributes.url}`}
               fill
-              alt={project.title}
               objectFit="cover"
+              alt={project.attributes.title}
             />
           </div>
         </a>
       </Link>
       <div className="mx-5">
-        <h5>{project.title}</h5>
-        <p className="text-muted">{project.subtitle}</p>
+        <h5>{project.attributes.title}</h5>
+        <p className="text-muted">{project.attributes.subtitle}</p>
       </div>
     </Col>
   ));
@@ -61,3 +59,13 @@ const Projects = (): JSX.Element => {
 };
 
 export default Projects;
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const projects = await getCMSProjects();
+
+  return {
+    props: {
+      projects: projects.data,
+    },
+  };
+};
