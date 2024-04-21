@@ -16,7 +16,7 @@ export interface ContentTypeBase<T> {
 
 interface StrapiBase<T> {
   data: T;
-  meta: any;
+  meta: unknown;
 }
 
 export interface StrapiImage {

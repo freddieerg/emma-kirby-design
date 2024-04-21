@@ -60,7 +60,7 @@ const Projects = ({ projects }: { projects: ContentTypeBase<Project>[] }): JSX.E
 
 export default Projects;
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const projects = await getCMSProjects();
 
   return {
