@@ -1,7 +1,7 @@
 import Cover from '../components/Cover';
 import Person from '../components/Person';
 import { GetStaticProps } from 'next';
-import { ContentTypeBase, getCMSTeamMembers, Project, TeamMember } from '../utils/cms';
+import { ContentTypeBase, getCMSTeamMembers, TeamMember } from '../utils/cms';
 
 interface AboutUsPageProps {
   teamMembers: ContentTypeBase<TeamMember>[];
@@ -23,6 +23,7 @@ const AboutUsPage = ({ teamMembers }: AboutUsPageProps): JSX.Element => {
       <section className="pt-4 pt-md-5 mt-md-5">
         {teamMembers.map((tm) => (
           <Person
+            key={tm.id}
             name={tm.attributes.name}
             position={tm.attributes.role}
             description={tm.attributes.description}
