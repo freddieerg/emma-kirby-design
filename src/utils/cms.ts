@@ -40,6 +40,10 @@ export interface StrapiImage {
   };
 }
 
+export interface HomePageST {
+  carousel: StrapiBase<StrapiImage[]>;
+}
+
 export const cms = async <T>(url: string, config: Partial<AxiosRequestConfig> = {}) => {
   const baseConfig = {
     url,
@@ -68,4 +72,8 @@ export const getCMSProject = async (projectId: string) => {
 
 export const getCMSTeamMembers = async () => {
   return cms<StrapiBase<ContentTypeBase<TeamMember>[]>>('/team-members', { params: { 'sort[0]': 'createdAt:asc' } });
+};
+
+export const getCMSHomePage = async () => {
+  return cms<StrapiBase<ContentTypeBase<HomePageST>>>('/home-page');
 };
