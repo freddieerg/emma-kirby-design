@@ -25,8 +25,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const homePage = await getCMSHomePage();
   const { carousel } = homePage.data.attributes;
 
-  console.log(carousel);
-
   return {
     props: {
       carousel: carousel.data,
