@@ -1,8 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { mergeDeep } from 'immutable';
-import { APIResponse, GetValues } from '../../strapi-types/types';
-import { ComponentsQuote } from '../../strapi-types/components';
-import type { Attribute } from '@strapi/types/dist/types/core';
+import { APIResponse, APIResponseCollection } from '../../strapi-types/types';
+
 export interface Project {
   projectId: string;
   title: string;
@@ -47,24 +46,6 @@ export interface HomePageST {
   carousel: StrapiBase<StrapiImage[]>;
 }
 
-export interface Component<CName extends string> {
-  id: number;
-  __component: CName;
-}
-
-export interface QuoteComponent extends Component<'components.quote'> {
-  quote: string;
-  author: string;
-  subtitle: string;
-}
-
-export interface QuoteCover extends Component<`components.cover`> {
-  title: string;
-  subtitle?: string;
-  coverImage: StrapiImage;
-  flipped: boolean;
-}
-
 export const cms = async <T>(url: string, config: Partial<AxiosRequestConfig> = {}) => {
   const baseConfig = {
     url,
@@ -80,7 +61,7 @@ export const cms = async <T>(url: string, config: Partial<AxiosRequestConfig> = 
 };
 
 export const getCMSProjects = async () => {
-  return cms<StrapiBase<ContentTypeBase<Project>[]>>('/projects', { params: { 'sort[0]': 'createdAt:asc' } });
+  return cms<APIResponseCollection<'api::project.project'>>('/projects', { params: { 'sort[0]': 'createdAt:asc' } });
 };
 
 export const getCMSProject = async (projectId: string) => {
@@ -97,6 +78,18 @@ export const getCMSTeamMembers = async () => {
 
 export const getCMSHomePage = async () => {
   return cms<StrapiBase<ContentTypeBase<HomePageST>>>('/home-page');
+};
+
+export const getCMSAboutUsPage = async () => {
+  return cms<APIResponse<'api::about-us-page.about-us-page'>>('/about-us-page');
+};
+
+export const getCMSProjectsPage = async () => {
+  return cms<APIResponse<'api::projects-page.projects-page'>>('/projects-page');
+};
+
+export const getCMSContactUsPage = async () => {
+  return cms<APIResponse<'api::contact-us-page.contact-us-page'>>('/contact-us-page');
 };
 
 export const getCMSWhatWeDoPage = async () => {

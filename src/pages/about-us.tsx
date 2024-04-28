@@ -1,24 +1,22 @@
 import Cover from '../components/Cover';
 import Person from '../components/Person';
 import { GetStaticProps } from 'next';
-import { ContentTypeBase, getCMSTeamMembers, TeamMember } from '../utils/cms';
+import { ContentTypeBase, getCMSAboutUsPage, getCMSTeamMembers, TeamMember } from '../utils/cms';
+import { GetValue } from '../../strapi-types/types';
+import type { Attribute } from '@strapi/strapi';
 
 interface AboutUsPageProps {
+  cover: GetValue<Attribute.Component<'components.cover'>>;
   teamMembers: ContentTypeBase<TeamMember>[];
 }
 
-const AboutUsPage = ({ teamMembers }: AboutUsPageProps): JSX.Element => {
+const AboutUsPage = ({ cover, teamMembers }: AboutUsPageProps): JSX.Element => {
   return (
     <>
       <Cover
-        title="About Us"
-        subtitle={
-          <>
-            At Emma Kirby Design, we help our clients with every stage of creating their home, ensuring that it is
-            perfectly suited to their lifestyle demands.
-          </>
-        }
-        image="/img/misc/studio.jpeg"
+        title={cover.title}
+        subtitle={<>{cover.subtitle}</>}
+        image={process.env.NEXT_PUBLIC_CMS_URL + cover.coverImage.data.attributes?.url}
       />
       <section className="pt-4 pt-md-5 mt-md-5">
         {teamMembers.map((tm) => (
@@ -42,12 +40,14 @@ const AboutUsPage = ({ teamMembers }: AboutUsPageProps): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  const aboutUs = await getCMSAboutUsPage();
   const teamMembers = await getCMSTeamMembers();
 
-  console.log(teamMembers);
+  const { cover } = aboutUs.data.attributes;
 
   return {
     props: {
+      cover,
       teamMembers: teamMembers.data,
     },
   };
