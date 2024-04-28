@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
 
 interface MenuProps {
   show: boolean;
@@ -49,8 +49,8 @@ const Menu = ({ show, onHide }: MenuProps): JSX.Element => {
           <span className="h5">
             <Link legacyBehavior href="/privacy">
               <a>Privacy Policy</a>
-            </Link>{' '}
-            ·{' '}
+            </Link>{" "}
+            ·{" "}
             <Link legacyBehavior href="/terms">
               <a>Terms & Conditions</a>
             </Link>

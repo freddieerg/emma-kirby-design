@@ -1,19 +1,19 @@
-import Cover from '../components/Cover';
-import Quote from '../components/Quote';
-import { GetStaticProps } from 'next';
-import { getCMSWhatWeDoPage } from '../utils/cms';
-import { GetValue } from '../../strapi-types/types';
-import type { Attribute } from '@strapi/strapi';
+import Cover from "../components/Cover";
+import Quote from "../components/Quote";
+import { GetStaticProps } from "next";
+import { getCMSWhatWeDoPage } from "../utils/cms";
+import { GetValue } from "../../strapi-types/types";
+import type { Attribute } from "@strapi/strapi";
 
 interface WhatWeDoPageProps {
-  cover: GetValue<Attribute.Component<'components.cover'>>;
-  content: GetValue<Attribute.DynamicZone<['components.quote', 'components.cover']>>;
+  cover: GetValue<Attribute.Component<"components.cover">>;
+  content: GetValue<Attribute.DynamicZone<["components.quote", "components.cover"]>>;
 }
 
 const WhatWeDoPage = ({ cover, content }: WhatWeDoPageProps): JSX.Element => {
   const contentCover = content.map((comp) => {
     switch (comp.__component) {
-      case 'components.cover':
+      case "components.cover":
         return (
           <Cover
             title={comp.title}
@@ -22,7 +22,7 @@ const WhatWeDoPage = ({ cover, content }: WhatWeDoPageProps): JSX.Element => {
             flip={comp.flipped}
           />
         );
-      case 'components.quote':
+      case "components.quote":
         return <Quote quote={comp.quote} author={comp.author} subtitle={comp.subtitle} />;
     }
   });

@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import Cover from '../components/Cover';
-import Button from 'react-bootstrap/Button';
-import Message from '../components/Message';
-import { GetStaticProps } from 'next';
-import { getCMSContactUsPage } from '../utils/cms';
-import { GetValue } from '../../strapi-types/types';
-import type { Attribute } from '@strapi/strapi';
+import { useState } from "react";
+import Cover from "../components/Cover";
+import Button from "react-bootstrap/Button";
+import Message from "../components/Message";
+import { GetStaticProps } from "next";
+import { getCMSContactUsPage } from "../utils/cms";
+import { GetValue } from "../../strapi-types/types";
+import type { Attribute } from "@strapi/strapi";
 
 interface ContactUsPageProps {
-  cover: GetValue<Attribute.Component<'components.cover'>>;
+  cover: GetValue<Attribute.Component<"components.cover">>;
 }
 
 const ContactUs = ({ cover }: ContactUsPageProps): JSX.Element => {

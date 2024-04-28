@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-import Menu from './Menu';
+import Menu from "./Menu";
 
 const EKDNavbar = (): JSX.Element => {
   const [showMenu, setShowMenu] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    router.events.on('routeChangeStart', () => setShowMenu(false));
+    router.events.on("routeChangeStart", () => setShowMenu(false));
     return () => {
-      router.events.off('routeChangeStart', () => setShowMenu(false));
+      router.events.off("routeChangeStart", () => setShowMenu(false));
     };
   }, [router.events, showMenu]);
 
@@ -31,7 +31,7 @@ const EKDNavbar = (): JSX.Element => {
                 <img
                   className="hover-brighten"
                   src="/img/logo.png"
-                  style={{ width: '50px', borderRadius: '1px' }}
+                  style={{ width: "50px", borderRadius: "1px" }}
                   alt="Emma Kirby Design Logo"
                 />
               </a>
@@ -41,10 +41,10 @@ const EKDNavbar = (): JSX.Element => {
           <Col sm={8} className="d-none d-sm-flex justify-content-center align-items-center">
             <Link legacyBehavior href="/">
               <a>
-                <h3 style={{ marginBottom: '0' }} className="fw-bold hover-brighten text-center">
-                  <span style={{ fontSize: '30px' }}>E</span>mma
-                  <span style={{ fontSize: '30px' }}> K</span>irby
-                  <span style={{ fontSize: '30px' }}> D</span>esign
+                <h3 style={{ marginBottom: "0" }} className="fw-bold hover-brighten text-center">
+                  <span style={{ fontSize: "30px" }}>E</span>mma
+                  <span style={{ fontSize: "30px" }}> K</span>irby
+                  <span style={{ fontSize: "30px" }}> D</span>esign
                 </h3>
               </a>
             </Link>
@@ -53,7 +53,7 @@ const EKDNavbar = (): JSX.Element => {
             <button
               onClick={() => setShowMenu(!showMenu)}
               className={`d-flex align-items-center pb-2 pl-2 pt-2 hamburger hamburger--spin-r ${
-                showMenu ? 'is-active' : ''
+                showMenu ? "is-active" : ""
               }`}
               type="button"
             >

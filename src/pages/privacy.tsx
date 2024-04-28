@@ -1,8 +1,8 @@
-import Cover from '../components/Cover';
+import Cover from "../components/Cover";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const Privacy = (): JSX.Element => {
   return (
@@ -70,7 +70,7 @@ const Privacy = (): JSX.Element => {
                   </li>
                   <li>
                     <p>
-                      <strong>Website</strong> refers to Emma Kirby Design, accessible from{' '}
+                      <strong>Website</strong> refers to Emma Kirby Design, accessible from{" "}
                       <a
                         href="https://emmakirbydesign.co.uk"
                         rel="external nofollow noopener noreferrer"
@@ -179,7 +179,7 @@ const Privacy = (): JSX.Element => {
                 <p>
                   Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on
                   your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon
-                  as You close your web browser. Learn more about cookies:{' '}
+                  as You close your web browser. Learn more about cookies:{" "}
                   <a href="https://www.termsfeed.com/blog/cookies/" target="_blank" rel="noreferrer">
                     All About Cookies
                   </a>
@@ -379,7 +379,7 @@ const Privacy = (): JSX.Element => {
                   </li>
                   <li>
                     <p>
-                      By visiting this page on our website:{' '}
+                      By visiting this page on our website:{" "}
                       <a
                         href="https://emmakirbydesign.co.uk/contact-us"
                         rel="external nofollow noopener noreferrer"

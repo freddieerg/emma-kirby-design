@@ -1,7 +1,7 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'next/image';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Image from "next/image";
 
 interface CoverProps {
   title: string;
@@ -20,7 +20,7 @@ const Cover = ({ title, subtitle, image, flip }: CoverProps): JSX.Element => {
             alt={title}
             fill
             style={{
-              objectFit: 'cover',
+              objectFit: "cover",
             }}
           />
         </Col>
@@ -28,11 +28,11 @@ const Cover = ({ title, subtitle, image, flip }: CoverProps): JSX.Element => {
           lg={6}
           md={8}
           className="d-flex flex-column justify-content-center py-5 px-4 px-sm-5"
-          style={{ background: '#333' }}
+          style={{ background: "#333" }}
         >
           <h1>{title}</h1>
           <hr className="mx-0" />
-          <p style={{ opacity: 0.8, fontSize: '18px', whiteSpace: 'pre-line' }}>{subtitle}</p>
+          <p style={{ opacity: 0.8, fontSize: "18px", whiteSpace: "pre-line" }}>{subtitle}</p>
         </Col>
       </Row>
     </Container>

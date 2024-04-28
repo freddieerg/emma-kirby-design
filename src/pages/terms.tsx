@@ -1,8 +1,8 @@
-import Cover from '../components/Cover';
+import Cover from "../components/Cover";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const Terms = (): JSX.Element => {
   return (
@@ -86,7 +86,7 @@ const Terms = (): JSX.Element => {
                   </li>
                   <li>
                     <p>
-                      <strong>Website</strong> refers to Emma Kirby Design, accessible from{' '}
+                      <strong>Website</strong> refers to Emma Kirby Design, accessible from{" "}
                       <a
                         href="https://emmakirbydesign.co.uk"
                         rel="external nofollow noopener noreferrer"
@@ -262,7 +262,7 @@ const Terms = (): JSX.Element => {
                   </li>
                   <li>
                     <p>
-                      By visiting this page on our website:{' '}
+                      By visiting this page on our website:{" "}
                       <a
                         href="https://emmakirbydesign.co.uk/contact-us"
                         rel="external nofollow noopener noreferrer"

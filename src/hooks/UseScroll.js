@@ -38,8 +38,7 @@ const createScrollState = (lastScrollTop) => {
   const scrollX = bodyBoundingRect.left;
   const scrollYMax = documentElement.scrollHeight - windowSize.innerHeight;
   const scrollXMax = documentElement.scrollWidth - windowSize.innerWidth;
-  const scrollDirection =
-    lastScrollTop > bodyBoundingRect.top ? DIRECTION.down : DIRECTION.up;
+  const scrollDirection = lastScrollTop > bodyBoundingRect.top ? DIRECTION.down : DIRECTION.up;
 
   return {
     scrollY,
@@ -54,8 +53,7 @@ const useWindowScroll = () => {
   const [state, setState] = useState(createScrollState(0));
 
   useEffect(() => {
-    const listener = () =>
-      setState((previousState) => createScrollState(previousState.scrollY));
+    const listener = () => setState((previousState) => createScrollState(previousState.scrollY));
 
     window.addEventListener("scroll", listener);
     return () => {

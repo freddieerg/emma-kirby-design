@@ -1,9 +1,9 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import nodemailer from 'nodemailer';
-import { renderToStaticMarkup } from 'react-dom/server';
+import { NextApiRequest, NextApiResponse } from "next";
+import nodemailer from "nodemailer";
+import { renderToStaticMarkup } from "react-dom/server";
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.zoho.eu',
+  host: "smtp.zoho.eu",
   port: 587,
   secure: false,
   auth: {
@@ -33,7 +33,7 @@ const renderBodyHtml = (data: MessageReqInterface): string => {
       <br />
       <br />
       <span>
-        {data.message.split('\n').map((item, key) => {
+        {data.message.split("\n").map((item, key) => {
           return (
             <span key={key}>
               {item}
@@ -50,7 +50,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
   const { name, email, subject }: MessageReqInterface = req.body;
   await transporter.sendMail({
     from: `"${name}" <mail-bot@emmakirbydesign.co.uk>`,
-    to: process.env.STAGE === 'dev' ? 'freddie.erg@outlook.com' : 'enquiries@emmakirbydesign.co.uk',
+    to: process.env.STAGE === "dev" ? "freddie.erg@outlook.com" : "enquiries@emmakirbydesign.co.uk",
     subject: subject,
     replyTo: email,
     html: renderBodyHtml(req.body),

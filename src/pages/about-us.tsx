@@ -1,13 +1,13 @@
-import Cover from '../components/Cover';
-import Person from '../components/Person';
-import { GetStaticProps } from 'next';
-import { ContentTypeBase, getCMSAboutUsPage, getCMSTeamMembers, TeamMember } from '../utils/cms';
-import { GetValue } from '../../strapi-types/types';
-import type { Attribute } from '@strapi/strapi';
+import Cover from "../components/Cover";
+import Person from "../components/Person";
+import { GetStaticProps } from "next";
+import { getCMSAboutUsPage, getCMSTeamMembers } from "../utils/cms";
+import { APIResponseData, GetValue } from "../../strapi-types/types";
+import type { Attribute } from "@strapi/strapi";
 
 interface AboutUsPageProps {
-  cover: GetValue<Attribute.Component<'components.cover'>>;
-  teamMembers: ContentTypeBase<TeamMember>[];
+  cover: GetValue<Attribute.Component<"components.cover">>;
+  teamMembers: APIResponseData<"api::team-member.team-member">[];
 }
 
 const AboutUsPage = ({ cover, teamMembers }: AboutUsPageProps): JSX.Element => {

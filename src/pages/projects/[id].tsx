@@ -1,11 +1,11 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { Background, Parallax } from 'react-parallax';
-import { Gallery, Item } from 'react-photoswipe-gallery';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'next/image';
-import { ContentTypeBase, getCMSProject, getCMSProjects, Project } from '../../utils/cms';
+import { GetStaticPaths, GetStaticProps } from "next";
+import { Background, Parallax } from "react-parallax";
+import { Gallery, Item } from "react-photoswipe-gallery";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Image from "next/image";
+import { ContentTypeBase, getCMSProject, getCMSProjects, Project } from "../../utils/cms";
 
 interface ProjectPageProps {
   project: ContentTypeBase<Project>;
@@ -15,20 +15,20 @@ const ProjectPage = ({ project }: ProjectPageProps): JSX.Element => {
   return (
     <>
       <section>
-        <Parallax className="mx-sm-n3" strength={100} style={{ height: '75vh' }}>
+        <Parallax className="mx-sm-n3" strength={100} style={{ height: "75vh" }}>
           <Background>
-            <div className="d-flex" style={{ height: '80vh', width: '100vw' }}>
+            <div className="d-flex" style={{ height: "80vh", width: "100vw" }}>
               <Image
                 src={`${process.env.NEXT_PUBLIC_CMS_URL}${project.attributes.thumbnail.data.attributes.url}`}
                 alt={project.attributes.title}
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
               />
             </div>
           </Background>
           <div
             className="d-flex text-center justify-content-center align-items-center flex-column"
-            style={{ height: '75vh', background: 'rgba(16,16,16,0.7)' }}
+            style={{ height: "75vh", background: "rgba(16,16,16,0.7)" }}
           >
             <h1>{project.attributes.title}</h1>
             <h4>{project.attributes.subtitle}</h4>
@@ -40,7 +40,7 @@ const ProjectPage = ({ project }: ProjectPageProps): JSX.Element => {
           <Container>
             <h2>About the Project</h2>
             <hr />
-            <p style={{ lineHeight: 1.5, fontSize: 18, whiteSpace: 'pre-wrap' }}>{project.attributes.about}</p>
+            <p style={{ lineHeight: 1.5, fontSize: 18, whiteSpace: "pre-wrap" }}>{project.attributes.about}</p>
           </Container>
         </section>
       )}
@@ -58,19 +58,19 @@ const ProjectPage = ({ project }: ProjectPageProps): JSX.Element => {
                   original={`${process.env.NEXT_PUBLIC_CMS_URL}${image.attributes.url}`}
                 >
                   {({ ref, open }) => (
-                    <Col md={6} lg={4} ref={ref} onClick={open} style={{ cursor: 'pointer' }}>
+                    <Col md={6} lg={4} ref={ref} onClick={open} style={{ cursor: "pointer" }}>
                       <div
                         className="rounded my-3 project-img position-relative overflow-hidden"
                         style={{
-                          width: '100%',
-                          paddingTop: '80%',
+                          width: "100%",
+                          paddingTop: "80%",
                         }}
                       >
                         <Image
                           src={`${process.env.NEXT_PUBLIC_CMS_URL}${image.attributes.url}`}
                           alt={project.attributes.title}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: "cover" }}
                           sizes="(min-width: 808px) 50vw, 100vw"
                         />
                       </div>

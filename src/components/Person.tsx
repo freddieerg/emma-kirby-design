@@ -1,6 +1,6 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 interface PersonProps {
   name: string;
@@ -11,10 +11,10 @@ interface PersonProps {
 }
 
 const socialBase = {
-  mail: 'mailto:',
-  instagram: 'https://instagram.com/',
-  pinterest: 'https://www.pinterest.co.uk/',
-  twitter: 'https://twitter.com/',
+  mail: "mailto:",
+  instagram: "https://instagram.com/",
+  pinterest: "https://www.pinterest.co.uk/",
+  twitter: "https://twitter.com/",
 };
 
 const Person = ({ name, position, description, image, socials = {} }: PersonProps): JSX.Element => {
@@ -33,7 +33,7 @@ const Person = ({ name, position, description, image, socials = {} }: PersonProp
     <Container className="mb-5">
       <Row>
         <Col md={{ span: 6, order: 2 }} className="mb-5 mb-md-0">
-          <img alt="About Us" className="rounded" style={{ maxWidth: '100%' }} src={image} />
+          <img alt="About Us" className="rounded" style={{ maxWidth: "100%" }} src={image} />
         </Col>
         <Col md={{ span: 6, order: 1 }} className="pr-md-4 pr-lg-5">
           <div className="position-sticky" style={{ top: 50 }}>

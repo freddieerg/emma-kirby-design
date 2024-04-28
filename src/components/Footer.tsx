@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 interface FooterProps {
   small?: boolean;
@@ -16,7 +16,7 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
           <Col md={6} className="text-md-left">
             <div className="d-flex d-md-inline justify-content-center justify-content-md-start">
               <img
-                style={{ maxHeight: '2.5em', borderRadius: '1px' }}
+                style={{ maxHeight: "2.5em", borderRadius: "1px" }}
                 alt="Logo"
                 className="me-0 me-md-4 mb-3 mb-md-0"
                 src="/img/logo.png"
@@ -64,7 +64,7 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
             </ul>
           </Col>
         </Row>
-        <Row className={`mt-4 ${small ? 'd-none' : ''}`}>
+        <Row className={`mt-4 ${small ? "d-none" : ""}`}>
           <Col md={6} className="d-flex justify-content-center justify-content-md-start text-center text-md-start">
             <span>
               © {new Date().getFullYear()} Emma Kirby Design

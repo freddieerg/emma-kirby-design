@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import Cover from '../../components/Cover';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'next/image';
-import { GetStaticProps } from 'next';
-import { getCMSProjects, getCMSProjectsPage } from '../../utils/cms';
-import { APIResponseData, GetValue } from '../../../strapi-types/types';
-import type { Attribute } from '@strapi/strapi';
+import Link from "next/link";
+import Cover from "../../components/Cover";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Image from "next/image";
+import { GetStaticProps } from "next";
+import { getCMSProjects, getCMSProjectsPage } from "../../utils/cms";
+import { APIResponseData, GetValue } from "../../../strapi-types/types";
+import type { Attribute } from "@strapi/strapi";
 
 interface ProjectsPageProps {
-  cover: GetValue<Attribute.Component<'components.cover'>>;
-  projects: APIResponseData<'api::project.project'>[];
+  cover: GetValue<Attribute.Component<"components.cover">>;
+  projects: APIResponseData<"api::project.project">[];
 }
 
 const Projects = ({ cover, projects }: ProjectsPageProps): JSX.Element => {
@@ -22,8 +22,8 @@ const Projects = ({ cover, projects }: ProjectsPageProps): JSX.Element => {
           <div
             className="rounded mb-4 shadow img-link position-relative overflow-hidden"
             style={{
-              width: '100%',
-              paddingTop: '56.25%',
+              width: "100%",
+              paddingTop: "56.25%",
             }}
           >
             <Image
