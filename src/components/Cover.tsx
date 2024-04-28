@@ -32,7 +32,7 @@ const Cover = ({ title, subtitle, image, flip }: CoverProps): JSX.Element => {
         >
           <h1>{title}</h1>
           <hr className="mx-0" />
-          <p style={{ opacity: 0.8, fontSize: '18px' }}>{subtitle}</p>
+          <p style={{ opacity: 0.8, fontSize: '18px', whiteSpace: 'pre-line' }}>{subtitle}</p>
         </Col>
       </Row>
     </Container>

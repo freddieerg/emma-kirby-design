@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "copytypes": "ts-node copyTypes.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
@@ -47,6 +48,7 @@
     "swiper": "^11.0.5"
   },
   "devDependencies": {
+    "@strapi/strapi": "^4.24.0",
     "@types/node": "20.11.0",
     "@types/react": "^18.2.47",
     "@typescript-eslint/eslint-plugin": "^6.18.1",
@@ -58,6 +60,7 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^3.2.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "engines": {
