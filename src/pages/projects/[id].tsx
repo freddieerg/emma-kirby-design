@@ -5,10 +5,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "next/image";
-import { ContentTypeBase, getCMSProject, getCMSProjects, Project } from "../../utils/cms";
+import { getCMSProject, getCMSProjects } from "../../utils/cms";
+import { APIResponseData } from "../../../strapi-types/types";
 
 interface ProjectPageProps {
-  project: ContentTypeBase<Project>;
+  project: APIResponseData<"api::project.project">;
 }
 
 const ProjectPage = ({ project }: ProjectPageProps): JSX.Element => {

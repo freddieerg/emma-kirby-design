@@ -27,7 +27,7 @@ const Projects = ({ cover, projects }: ProjectsPageProps): JSX.Element => {
             }}
           >
             <Image
-              src={process.env.NEXT_PUBLIC_CMS_URL + project.attributes.thumbnail.data.attributes.url}
+              src={process.env.NEXT_PUBLIC_CMS_URL + project.attributes.thumbnail.data.attributes?.url}
               fill
               objectFit="cover"
               alt={project.attributes.title}
@@ -35,7 +35,7 @@ const Projects = ({ cover, projects }: ProjectsPageProps): JSX.Element => {
           </div>
         </a>
       </Link>
-      <div className="mx-5">
+      <div className="mx-md-5 mr-5 text-start text-md-center">
         <h5>{project.attributes.title}</h5>
         <p className="text-muted">{project.attributes.subtitle}</p>
       </div>
