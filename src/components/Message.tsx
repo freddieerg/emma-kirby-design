@@ -68,7 +68,7 @@ const Message = ({ show, onHide }: MessageProps): JSX.Element => {
                     Thanks,
                     <br />
                     <br />
-                    We've got your message and a member of our team will get back to you as soon as possible.
+                    We&apos;ve got your message and a member of our team will get back to you as soon as possible.
                   </h5>
                   <Button className={`px-5 mt-4 ${isSubmitting ? "disabled" : ""}`} onClick={handleModalHide}>
                     Close

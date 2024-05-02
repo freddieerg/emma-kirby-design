@@ -14,7 +14,7 @@ const Quote = ({ quote, author, subtitle }: QuoteProps): JSX.Element => {
       <Row>
         <Col>
           <h4 className="mb-5" style={{ lineHeight: 1.5, opacity: 0.8 }}>
-            "{quote}"
+            &quot;{quote}&quot;
           </h4>
           <p className="m-0">{author}</p>
           <p className="text-muted mb-0">{subtitle}</p>
