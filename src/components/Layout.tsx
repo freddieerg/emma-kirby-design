@@ -35,7 +35,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
           <title>{title()}</title>
           <meta
             name="description"
-            content="Design Studio based in Oxfordshire offering Interior Design, Architectural Design, Bespoke Furniture Design, Development Consultancy, Project Management."
+            content="Cotswolds Design Studio based in Oxfordshire offering Interior Design, Architecture, Bespoke Furniture Design, Development Consultancy and Construction."
           />
         </Head>
         <Navbar />
