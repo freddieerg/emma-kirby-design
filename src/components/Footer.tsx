@@ -89,12 +89,18 @@ const Footer = ({ small = false }: FooterProps): JSX.Element => {
             </Col>
           </Row>
         </Container>
-        <img
-          src="https://cms.emmakirbydesign.co.uk/uploads/The_List_Featured_Designer_2024_48932c3732.png"
-          style={{ height: 100 }}
-          alt="The List: House & Garden 2024 Featured Designer"
-          className="mt-4 mt-lg-0 ms-lg-3"
-        />
+        <a
+          href="https://thelist.houseandgarden.com/united-kingdom/grafton-oxfordshire/service/emma-kirby-design"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://cms.emmakirbydesign.co.uk/uploads/The_List_Featured_Designer_2024_48932c3732.png"
+            style={{ height: 100 }}
+            alt="The List: House & Garden 2024 Featured Designer"
+            className="mt-4 mt-lg-0 ms-lg-3"
+          />
+        </a>
       </div>
     </footer>
   );
