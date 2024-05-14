@@ -25,7 +25,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 
   return (
     <>
-      <div className="d-flex flex-column pt-3 p-sm-3" style={{ minHeight: "100vh" }}>
+      <div className="d-flex flex-column pt-3 p-sm-3" style={{ minHeight: "100svh" }}>
         <Head>
           <link
             rel="stylesheet"
@@ -35,7 +35,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
           <title>{title()}</title>
           <meta
             name="description"
-            content="Design Studio based in Oxfordshire offering Interior Design, Architectural Design, Bespoke Furniture Design, Development Consultancy, Project Management."
+            content="Cotswolds Design Studio based in Oxfordshire offering Interior Design, Architecture, Bespoke Furniture Design, Development Consultancy and Construction."
           />
         </Head>
         <Navbar />
