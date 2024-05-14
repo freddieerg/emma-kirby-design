@@ -25,7 +25,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 
   return (
     <>
-      <div className="d-flex flex-column pt-3 p-sm-3" style={{ minHeight: "100vh" }}>
+      <div className="d-flex flex-column pt-3 p-sm-3" style={{ minHeight: "100svh" }}>
         <Head>
           <link
             rel="stylesheet"
