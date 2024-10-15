@@ -64,13 +64,12 @@ export default Projects;
 
 export const getStaticProps: GetStaticProps = async () => {
   const projectsPage = await getCMSProjectsPage();
-  const projects = await getCMSProjects();
   const { cover } = projectsPage.data.attributes;
 
   return {
     props: {
       cover,
-      projects: projects.data,
+      projects: projectsPage.data.attributes.projects.data,
     },
   };
 };

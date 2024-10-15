@@ -878,6 +878,39 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiPrivacyPolicyPagePrivacyPolicyPage
+  extends Schema.SingleType {
+  collectionName: 'privacy_policy_pages';
+  info: {
+    singularName: 'privacy-policy-page';
+    pluralName: 'privacy-policy-pages';
+    displayName: 'PrivacyPolicyPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cover: Attribute.Component<'components.cover'> & Attribute.Required;
+    policy: Attribute.RichText & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy-page.privacy-policy-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy-page.privacy-policy-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Schema.CollectionType {
   collectionName: 'projects';
   info: {
@@ -920,12 +953,18 @@ export interface ApiProjectsPageProjectsPage extends Schema.SingleType {
     singularName: 'projects-page';
     pluralName: 'projects-pages';
     displayName: 'ProjectsPage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     cover: Attribute.Component<'components.cover'>;
+    projects: Attribute.Relation<
+      'api::projects-page.projects-page',
+      'oneToMany',
+      'api::project.project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -975,6 +1014,37 @@ export interface ApiTeamMemberTeamMember extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::team-member.team-member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTermsPageTermsPage extends Schema.SingleType {
+  collectionName: 'terms_pages';
+  info: {
+    singularName: 'terms-page';
+    pluralName: 'terms-pages';
+    displayName: 'TermsPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cover: Attribute.Component<'components.cover'> & Attribute.Required;
+    terms: Attribute.RichText & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-page.terms-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-page.terms-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1035,9 +1105,11 @@ declare module '@strapi/types' {
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::project.project': ApiProjectProject;
       'api::projects-page.projects-page': ApiProjectsPageProjectsPage;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
+      'api::terms-page.terms-page': ApiTermsPageTermsPage;
       'api::what-we-do-page.what-we-do-page': ApiWhatWeDoPageWhatWeDoPage;
     }
   }
