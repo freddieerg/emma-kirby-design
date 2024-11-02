@@ -10,7 +10,7 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      'sans-serif': ["Lora", ...defaultTheme.fontFamily.sans]
+      'sans-serif': ["Linux Libertine O", ...defaultTheme.fontFamily.sans]
     },
     extend: {
       colors: {
