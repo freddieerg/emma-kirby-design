@@ -4,6 +4,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -15,10 +16,25 @@
     "plugins": [
       {
         "name": "next"
+      },
+      {
+        "name": "gql.tada/ts-plugin",
+        "schema": "./src/graphql/schema.graphql",
+        "tadaOutputLocation": "./src/graphql/graphql-env.d.ts",
+        "trackFieldUsage": false,
+        "shouldCheckForColocatedFragments": false
+
       }
     ],
     "paths": {
       "@/*": ["./src/*"]
+    }
+  },
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    // same as the --compilerOptions flag and the TS_NODE_COMPILER_OPTIONS environment variable
+    "compilerOptions": {
+      "module": "commonjs"
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
