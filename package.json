@@ -12,6 +12,7 @@
   "dependencies": {
     "@apollo/client": "^3.11.8",
     "@apollo/experimental-nextjs-app-support": "^0.11.5",
+    "@radix-ui/react-dialog": "^1.1.2",
     "dotenv": "^16.4.5",
     "gql.tada": "^1.8.10",
     "hamburger-react": "^2.5.1",
