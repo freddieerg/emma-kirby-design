@@ -34,19 +34,39 @@ export default function NavBar() {
                     <Dialog.Overlay className="fixed inset-0 bg-[#121212]" />
                     <Dialog.Content className="flex flex-col items-center justify-center fixed inset-0">
                         <ul className={"flex flex-col space-y-2 text-center"}>
-                            <li className={"text-2xl"}>
+                            <li
+                                className={
+                                    "text-2xl duration-300 hover:opacity-80"
+                                }
+                            >
                                 <Link href={"/"}>Home</Link>
                             </li>
-                            <li className={"text-2xl"}>
+                            <li
+                                className={
+                                    "text-2xl duration-300 hover:opacity-80"
+                                }
+                            >
                                 <Link href={"/"}>About Us</Link>
                             </li>
-                            <li className={"text-2xl"}>
+                            <li
+                                className={
+                                    "text-2xl duration-300 hover:opacity-80"
+                                }
+                            >
                                 <Link href={"/"}>What We Do</Link>
                             </li>
-                            <li className={"text-2xl"}>
+                            <li
+                                className={
+                                    "text-2xl duration-300 hover:opacity-80"
+                                }
+                            >
                                 <Link href={"/"}>Projects</Link>
                             </li>
-                            <li className={"text-2xl"}>
+                            <li
+                                className={
+                                    "text-2xl duration-300 hover:opacity-80"
+                                }
+                            >
                                 <Link href={"/"}>Contact Us</Link>
                             </li>
                         </ul>
