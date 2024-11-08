@@ -1,24 +1,23 @@
 import type { Config } from "tailwindcss";
 import * as defaultTheme from "tailwindcss/defaultTheme";
 
-
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    fontFamily: {
-      'sans-serif': ["Linux Libertine O", ...defaultTheme.fontFamily.sans]
+    content: [
+        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    theme: {
+        fontFamily: {
+            serif: ["athelas", ...defaultTheme.fontFamily.serif],
+        },
+        extend: {
+            colors: {
+                background: "var(--background)",
+                foreground: "var(--foreground)",
+            },
+        },
     },
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
-  },
-  plugins: [],
+    plugins: [],
 };
 export default config;

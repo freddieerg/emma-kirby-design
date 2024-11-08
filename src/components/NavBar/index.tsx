@@ -14,19 +14,26 @@ export default function NavBar() {
         <>
             <div
                 className={
-                    "flex w-full items-center justify-between my-4 px-6 z-50 pointer-events-auto"
+                    "flex w-full items-center justify-between my-3 px-6 z-50 pointer-events-auto"
                 }
             >
-                <div className={"flex relative h-10"}>
+                <Link href={"/"} className={"flex relative h-9"}>
                     <Image
                         src={logo}
                         alt={"Emma Kirby Design Logo"}
                         className={"w-auto"}
                     />
-                </div>
-                <div className={"text-3xl font-[500]"}>Emma Kirby Design</div>
+                </Link>
+                <Link href={"/"} className={"text-3xl font-bold"}>
+                    Emma Kirby Design
+                </Link>
                 <div className={"h-fit w-fit"}>
-                    <Hamburger toggled={open} toggle={setOpen} rounded />
+                    <Hamburger
+                        toggled={open}
+                        toggle={setOpen}
+                        rounded
+                        size={24}
+                    />
                 </div>
             </div>
             <Dialog.Root open={open}>

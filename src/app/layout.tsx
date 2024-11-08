@@ -1,5 +1,34 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import localFont from "next/font/local";
+import classNames from "classnames";
+
+const athelas = localFont({
+    variable: "--font-athelas",
+    display: "swap",
+    src: [
+        {
+            path: "./fonts/Athelas-Regular.ttf",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "./fonts/Athelas-Italic.ttf",
+            weight: "400",
+            style: "italic",
+        },
+        {
+            path: "./fonts/Athelas-Bold.ttf",
+            weight: "700",
+            style: "normal",
+        },
+        {
+            path: "./fonts/Athelas-BoldItalic.ttf",
+            weight: "700",
+            style: "italic",
+        },
+    ],
+});
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -14,9 +43,13 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={"bg-[#252525] text-[#b4b0a6] font-sans-serif"}
+            className={classNames(
+                "bg-[#252525]",
+                "text-[#b4b0a6]",
+                athelas.variable
+            )}
         >
-            <body>{children}</body>
+            <body className={"font-serif antialiased"}>{children}</body>
         </html>
     );
 }
