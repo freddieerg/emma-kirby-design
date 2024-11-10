@@ -38,8 +38,8 @@ export default function NavBar() {
             </div>
             <Dialog.Root open={open}>
                 <Dialog.Portal>
-                    <Dialog.Overlay className="fixed inset-0 bg-[#121212]" />
-                    <Dialog.Content className="flex flex-col items-center justify-center fixed inset-0">
+                    <Dialog.Overlay className="fixed inset-0 bg-[#121212] data-[state=open]:animate-overlayShow" />
+                    <Dialog.Content className="flex flex-col items-center justify-center fixed inset-0 data-[state=open]:animate-contentShow">
                         <ul className={"flex flex-col space-y-2 text-center"}>
                             <li
                                 className={

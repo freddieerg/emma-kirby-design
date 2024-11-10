@@ -16,6 +16,26 @@ const config: Config = {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
             },
+            keyframes: {
+                overlayShow: {
+                    from: { opacity: "0" },
+                    to: { opacity: "1" },
+                },
+                contentShow: {
+                    from: {
+                        opacity: "0",
+                        marginBottom: "300px",
+                    },
+                    to: {
+                        opacity: "1",
+                        marginBottom: "0",
+                    },
+                },
+            },
+            animation: {
+                overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+                contentShow: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+            },
         },
     },
     plugins: [],

@@ -1,0 +1,119 @@
+import { graphql } from "gql.tada";
+import { query } from "@/graphql/client";
+import NavBar from "@/components/NavBar";
+import Image from "next/image";
+import Link from "next/link";
+import ProjectGalleryImageTile from "@/components/ProjectGalleryImageTile";
+
+interface ProjectPageProps {
+    params: {
+        projectSlug: string;
+    };
+}
+
+const Page = async ({ params }: ProjectPageProps) => {
+    const { data } = await query({
+        query: ProjectQueryDocument,
+        variables: { projectId: params.projectSlug },
+    });
+
+    const project = data.projects[0];
+
+    if (!project) return null;
+
+    return (
+        <>
+            <div className={"flex flex-col h-screen"}>
+                <NavBar />
+                <div className={"flex flex-grow relative"}>
+                    <div
+                        className={"relative size-full bg-opacity-60 bg-black"}
+                    >
+                        <Image
+                            src={project.thumbnail.url}
+                            alt={""}
+                            className={"object-cover -z-10"}
+                            fill
+                        />
+                    </div>
+                    <div
+                        className={
+                            "flex flex-col justify-center items-center absolute inset-0 text-center mx-4"
+                        }
+                    >
+                        <div className={"text-5xl font-bold mb-4"}>
+                            {project.title}
+                        </div>
+                        <div className={"text-3xl"}>{project.subtitle}</div>
+                    </div>
+                </div>
+            </div>
+            <div className={"flex flex-col gap-y-10 mx-24 mt-16"}>
+                <section aria-label={"About the Project"}>
+                    <div className={"text-4xl"}>About the Project</div>
+                    <hr className={"my-6 opacity-50"} />
+                    <p className={"whitespace-pre-wrap text-lg"}>
+                        {project.about}
+                    </p>
+                </section>
+                <section aria-label={"Gallery"}>
+                    <div className={"text-4xl"}>Gallery</div>
+                    <hr className={"my-6 opacity-50"} />
+                    <ul className={"grid grid-cols-1 lg:grid-cols-3 gap-8"}>
+                        {project.gallery.map((item, index) => (
+                            <li
+                                key={item!.url}
+                                className={
+                                    "relative aspect-square transition transform hover:scale-105 focus:scale-105 rounded-lg overflow-hidden"
+                                }
+                            >
+                                <Link href={"/"}>
+                                    <ProjectGalleryImageTile
+                                        thumbnailUrl={item!.url}
+                                        alt={`Image ${index}`}
+                                    />
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            </div>
+        </>
+    );
+};
+
+const ProjectFragment = graphql(`
+    fragment ProjectFragment on Project @_unmask {
+        projectId
+        title
+        subtitle
+        about
+        thumbnail {
+            url
+        }
+        gallery {
+            url
+        }
+    }
+`);
+
+const ProjectQueryDocument = graphql(
+    `
+        query ProjectQuery($projectId: String) {
+            projects(filters: { projectId: { eq: $projectId } }) {
+                ...ProjectFragment
+            }
+        }
+    `,
+    [ProjectFragment]
+);
+
+// export async function generateStaticParams() {
+//     const posts = await fetch("https://.../posts").then((res) => res.json());
+//
+//     return posts.map((post) => ({
+//         slug: post.slug,
+//     }));
+// }
+
+export default Page;
