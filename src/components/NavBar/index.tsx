@@ -16,7 +16,7 @@ export default function NavBar() {
             <div
                 className={classNames(
                     "flex w-full items-center justify-between my-3 px-6 pointer-events-auto",
-                    { open: "z-10" }
+                    { "z-10": open }
                 )}
             >
                 <Link href={"/"} className={"flex relative h-9 w-24"}>
