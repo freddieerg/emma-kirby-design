@@ -2,8 +2,8 @@ import { graphql } from "gql.tada";
 import { query } from "@/graphql/client";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
-import Link from "next/link";
 import ProjectGalleryImageTile from "@/components/ProjectGalleryImageTile";
+import Gallery from "@/components/Gallery";
 
 interface ProjectPageProps {
     params: {
@@ -60,21 +60,23 @@ const Page = async ({ params }: ProjectPageProps) => {
                     <div className={"text-4xl"}>Gallery</div>
                     <hr className={"my-6 opacity-50"} />
                     <ul className={"grid grid-cols-1 lg:grid-cols-3 gap-8"}>
-                        {project.gallery.map((item, index) => (
-                            <li
-                                key={item!.url}
-                                className={
-                                    "relative aspect-square transition transform hover:scale-105 focus:scale-105 rounded-lg overflow-hidden"
-                                }
-                            >
-                                <Link href={"/"}>
+                        <Gallery
+                            slides={project.gallery.map((img) => img!.url)}
+                        >
+                            {project.gallery.map((item, index) => (
+                                <li
+                                    key={item!.url}
+                                    className={
+                                        "relative aspect-square transition transform hover:scale-105 focus:scale-105 rounded-lg overflow-hidden"
+                                    }
+                                >
                                     <ProjectGalleryImageTile
                                         thumbnailUrl={item!.url}
                                         alt={`Image ${index}`}
                                     />
-                                </Link>
-                            </li>
-                        ))}
+                                </li>
+                            ))}
+                        </Gallery>
                     </ul>
                 </section>
             </div>

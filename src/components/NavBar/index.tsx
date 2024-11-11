@@ -6,6 +6,7 @@ import Hamburger from "hamburger-react";
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import Link from "next/link";
+import classNames from "classnames";
 
 export default function NavBar() {
     const [open, setOpen] = useState(false);
@@ -13,11 +14,12 @@ export default function NavBar() {
     return (
         <>
             <div
-                className={
-                    "flex w-full items-center justify-between my-3 px-6 z-50 pointer-events-auto"
-                }
+                className={classNames(
+                    "flex w-full items-center justify-between my-3 px-6 pointer-events-auto",
+                    { open: "z-10" }
+                )}
             >
-                <Link href={"/"} className={"flex relative h-9"}>
+                <Link href={"/"} className={"flex relative h-9 w-24"}>
                     <Image
                         src={logo}
                         alt={"Emma Kirby Design Logo"}
@@ -27,7 +29,7 @@ export default function NavBar() {
                 <Link href={"/"} className={"text-3xl font-bold"}>
                     Emma Kirby Design
                 </Link>
-                <div className={"h-fit w-fit"}>
+                <div className={"flex justify-end h-fit -mr-3 w-24"}>
                     <Hamburger
                         toggled={open}
                         toggle={setOpen}
@@ -39,7 +41,10 @@ export default function NavBar() {
             <Dialog.Root open={open}>
                 <Dialog.Portal>
                     <Dialog.Overlay className="fixed inset-0 bg-[#121212] data-[state=open]:animate-overlayShow" />
-                    <Dialog.Content className="flex flex-col items-center justify-center fixed inset-0 data-[state=open]:animate-contentShow">
+                    <Dialog.Content
+                        className="flex flex-col items-center justify-center fixed inset-0 data-[state=open]:animate-contentShow"
+                        onEscapeKeyDown={() => setOpen(false)}
+                    >
                         <ul className={"flex flex-col space-y-2 text-center"}>
                             <li
                                 className={
