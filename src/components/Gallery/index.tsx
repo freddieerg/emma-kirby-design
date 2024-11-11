@@ -14,6 +14,7 @@ import {
     useState,
 } from "react";
 import { EmblaCarouselType } from "embla-carousel";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/16/solid";
 
 interface GalleryProps {
     slides: string[];
@@ -35,7 +36,7 @@ export default function Gallery({ slides, children }: GalleryProps) {
         [emblaApi]
     );
 
-    const chill = useMemo(
+    const childrenWithButtons = useMemo(
         () =>
             Children.map(children, (child, index) =>
                 isValidElement(child)
@@ -62,9 +63,25 @@ export default function Gallery({ slides, children }: GalleryProps) {
         emblaApi.on("select", onSelect);
     }, [emblaApi, onSelect]);
 
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "ArrowLeft") {
+                emblaApi?.scrollPrev();
+            } else if (event.key === "ArrowRight") {
+                emblaApi?.scrollNext();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [emblaApi]);
+
     return (
         <>
-            {chill}
+            {childrenWithButtons}
             <Dialog.Root open={open}>
                 <Dialog.Portal>
                     <Dialog.Overlay className="fixed inset-0 bg-[#121212] data-[state=open]:animate-overlayShow" />
@@ -86,7 +103,7 @@ export default function Gallery({ slides, children }: GalleryProps) {
                                 }}
                             >
                                 <div>
-                                    {selectedIndex + 1} of {chill?.length}
+                                    {selectedIndex + 1} of {slides?.length}
                                 </div>
                                 <button
                                     className={""}
@@ -121,6 +138,30 @@ export default function Gallery({ slides, children }: GalleryProps) {
                                             />
                                         </div>
                                     ))}
+                                </div>
+                                <div
+                                    className={
+                                        "flex items-center justify-between px-4 absolute top-1/2 right-0 left-0 pointer-events-none"
+                                    }
+                                >
+                                    <button
+                                        className={
+                                            "rounded bg-[#121212] bg-opacity-40 pointer-events-auto"
+                                        }
+                                        aria-label={"Previous Slide"}
+                                        onClick={() => emblaApi?.scrollPrev()}
+                                    >
+                                        <ArrowLeftIcon className={"size-8"} />
+                                    </button>
+                                    <button
+                                        className={
+                                            "rounded bg-[#121212] bg-opacity-40 pointer-events-auto"
+                                        }
+                                        aria-label={"Next Slide"}
+                                        onClick={() => emblaApi?.scrollNext()}
+                                    >
+                                        <ArrowRightIcon className={"size-8"} />
+                                    </button>
                                 </div>
                             </div>
                         </div>
