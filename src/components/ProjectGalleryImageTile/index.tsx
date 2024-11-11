@@ -16,7 +16,7 @@ export default function ProjectGalleryImageTile({
             src={thumbnailUrl}
             alt={alt}
             fill
-            className={"object-cover transition opacity-0"}
+            className={"object-cover transition opacity-0 -z-10"}
             onLoad={(element) =>
                 element.currentTarget.classList.add("opacity-100")
             }

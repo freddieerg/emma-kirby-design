@@ -43,7 +43,10 @@ export default function Gallery({ slides, children }: GalleryProps) {
                     ? cloneElement(child, {
                           ...child.props,
                           children: (
-                              <button onClick={() => openAtIndex(index)}>
+                              <button
+                                  className={"size-full"}
+                                  onClick={() => openAtIndex(index)}
+                              >
                                   {child.props.children}
                               </button>
                           ),
@@ -141,7 +144,7 @@ export default function Gallery({ slides, children }: GalleryProps) {
                                 </div>
                                 <div
                                     className={
-                                        "flex items-center justify-between px-4 absolute top-1/2 right-0 left-0 pointer-events-none"
+                                        "flex items-center justify-between px-4 fixed top-1/2 right-0 left-0 pointer-events-none"
                                     }
                                 >
                                     <button
