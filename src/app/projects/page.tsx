@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function Page() {
-    const { data } = await query({
+    const {
+        data: { projectsPage },
+    } = await query({
         query: ProjectsPageQueryDocument,
     });
-
-    const { projectsPage } = data;
 
     if (!projectsPage) return null;
 
