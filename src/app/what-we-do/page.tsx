@@ -1,29 +1,104 @@
-import { graphql } from "gql.tada";
+import { FragmentOf, graphql } from "gql.tada";
 import { query } from "@/graphql/client";
+import NavBar from "@/components/NavBar";
+import HeroCover from "@/components/HeroCover";
+import Quote from "@/components/Quote";
 
 export default async function Page() {
     const {
-        data: { whatWeDoPage },
+        data: { whatWeDoPage: pageData },
     } = await query({
         query: WhatWeDoPageQueryDocument,
     });
 
-    if (!whatWeDoPage) return;
+    if (!pageData) return;
 
-    return <div></div>;
+    const mapDynamicZone = (
+        content: FragmentOf<
+            typeof WhatWeDoPageContentDynamicZoneFragment
+        > | null
+    ) => {
+        switch (content?.__typename) {
+            case "ComponentComponentsCover":
+                return (
+                    <HeroCover
+                        image={content.coverImage.url}
+                        title={content.title}
+                        subtitle={content.subtitle}
+                        flipped={content.flipped}
+                        textContainerClassName={"py-48"}
+                    />
+                );
+            case "ComponentComponentsQuote":
+                return (
+                    <Quote
+                        quote={content.quote}
+                        author={content.author}
+                        subtitle={content.subtitle}
+                    />
+                );
+            case "Error":
+                return null;
+        }
+    };
+
+    return (
+        <>
+            <div className={"flex flex-col min-h-screen"}>
+                <NavBar />
+                <HeroCover
+                    className={"flex flex-grow"}
+                    image={pageData.cover!.coverImage.url}
+                    title={pageData.cover!.title}
+                    subtitle={pageData.cover!.subtitle}
+                />
+            </div>
+            {pageData.content!.map(mapDynamicZone)}
+        </>
+    );
 }
 
-const WhatWeDoPageFragment = graphql(`
-    fragment WhatWeDoPageFragment on WhatWeDoPage @_unmask {
-        cover {
+const WhatWeDoPageContentDynamicZoneFragment = graphql(`
+    fragment WhatWeDoPageContentDynamicZoneFragment on WhatWeDoPageContentDynamicZone
+    @_unmask {
+        __typename
+        ... on ComponentComponentsQuote {
+            __typename
+            quote
+            author
+            subtitle
+        }
+
+        ... on ComponentComponentsCover {
+            __typename
             title
             subtitle
+            flipped
             coverImage {
                 url
             }
         }
     }
 `);
+
+const WhatWeDoPageFragment = graphql(
+    `
+        fragment WhatWeDoPageFragment on WhatWeDoPage @_unmask {
+            cover {
+                title
+                subtitle
+                coverImage {
+                    url
+                }
+            }
+            content {
+                __typename
+                ...WhatWeDoPageContentDynamicZoneFragment
+            }
+        }
+    `,
+    [WhatWeDoPageContentDynamicZoneFragment]
+);
 
 const WhatWeDoPageQueryDocument = graphql(
     `

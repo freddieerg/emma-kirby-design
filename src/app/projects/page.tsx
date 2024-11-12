@@ -3,42 +3,27 @@ import { graphql } from "gql.tada";
 import { query } from "@/graphql/client";
 import Image from "next/image";
 import Link from "next/link";
+import HeroCover from "@/components/HeroCover";
 
 export default async function Page() {
     const {
-        data: { projectsPage },
+        data: { projectsPage: pageData },
     } = await query({
         query: ProjectsPageQueryDocument,
     });
 
-    if (!projectsPage) return null;
+    if (!pageData) return null;
 
     return (
         <>
             <div className={"flex flex-col h-screen"}>
                 <NavBar />
-                <figure className={"flex flex-grow relative bg-[#333333]"}>
-                    <div className={"relative basis-1/2"}>
-                        <Image
-                            src={projectsPage.cover!.coverImage.url}
-                            alt={"Cover Image"}
-                            fill
-                            className={"object-cover"}
-                        />
-                    </div>
-                    <figcaption
-                        className={
-                            "basis-1/2 flex flex-col justify-center px-8"
-                        }
-                    >
-                        <div className={"text-4xl mb-6"}>
-                            {projectsPage.cover!.title}
-                        </div>
-                        <div className={"text-xl"}>
-                            {projectsPage.cover!.subtitle}
-                        </div>
-                    </figcaption>
-                </figure>
+                <HeroCover
+                    className={"flex flex-grow"}
+                    image={pageData.cover!.coverImage.url}
+                    title={pageData.cover!.title}
+                    subtitle={pageData.cover!.subtitle}
+                />
             </div>
             <div>
                 <ul
@@ -46,7 +31,7 @@ export default async function Page() {
                         "grid grid-cols-1 lg:grid-cols-2 gap-8 px-12 py-20"
                     }
                 >
-                    {projectsPage.projects.map((project) => (
+                    {pageData.projects.map((project) => (
                         <li key={project!.projectId} className={"w-full"}>
                             <Link href={`/projects/${project!.projectId}`}>
                                 <figure>
