@@ -22,6 +22,7 @@
 .idea
 src/graphql/graphql-env.d.ts
 src/graphql/schema.graphql
+src/graphql/possibleTypes.json
 
 # debug
 npm-debug.log*

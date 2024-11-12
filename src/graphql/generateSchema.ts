@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { generateOutput, generateSchema } from "@gql.tada/cli-utils";
+import { generatePossibleTypes } from "./generatePossibleTypes";
 
 const run = async () => {
     await generateSchema({
@@ -13,6 +14,11 @@ const run = async () => {
         output: "./src/graphql/graphql-env.d.ts",
         disablePreprocessing: false,
         tsconfig: undefined,
+    });
+
+    await generatePossibleTypes({
+        input: `${process.env.CMS_URL}/graphql`,
+        output: "./src/graphql/possibleTypes.json",
     });
 };
 
