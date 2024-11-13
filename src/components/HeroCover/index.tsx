@@ -20,11 +20,18 @@ export default function HeroCover({
 }: HeroCoverProps) {
     return (
         <div className={className}>
-            <figure className={"flex flex-grow relative bg-[#333333]"}>
+            <figure
+                className={
+                    "flex flex-col sm:flex-row flex-grow relative bg-[#333333]"
+                }
+            >
                 <div
-                    className={classNames("relative basis-1/2", {
-                        "order-1": flipped,
-                    })}
+                    className={classNames(
+                        "relative h-48 sm:h-auto sm:basis-1/3 md:basis-1/2",
+                        {
+                            "sm:order-1": flipped,
+                        }
+                    )}
                 >
                     <Image
                         src={image}
@@ -35,13 +42,13 @@ export default function HeroCover({
                 </div>
                 <figcaption
                     className={classNames(
-                        "basis-1/2 flex flex-col justify-center p-8",
+                        "sm:basis-2/3 md:basis-1/2 flex flex-col justify-center p-8",
                         textContainerClassName
                     )}
                 >
                     <div className={"text-4xl"}>{title}</div>
                     <hr className={"my-6 opacity-50"} />
-                    <div className={"text-xl whitespace-pre-wrap"}>
+                    <div className={"text-lg whitespace-pre-wrap"}>
                         {subtitle}
                     </div>
                 </figcaption>

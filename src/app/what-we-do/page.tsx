@@ -26,7 +26,7 @@ export default async function Page() {
                         title={content.title}
                         subtitle={content.subtitle}
                         flipped={content.flipped}
-                        textContainerClassName={"py-48"}
+                        textContainerClassName={"py-12 md:py-28 lg:py-40"}
                     />
                 );
             case "ComponentComponentsQuote":
