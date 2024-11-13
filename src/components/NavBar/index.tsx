@@ -59,7 +59,7 @@ export default function NavBar() {
                                     "text-2xl duration-300 hover:opacity-80"
                                 }
                             >
-                                <Link href={"/"}>About Us</Link>
+                                <Link href={"/about-us"}>About Us</Link>
                             </li>
                             <li
                                 className={
