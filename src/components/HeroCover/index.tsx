@@ -1,9 +1,11 @@
 import Image from "next/image";
 import classNames from "classnames";
+import { ElementType } from "react";
 
 interface HeroCoverProps {
     image: string;
     title: string;
+    titleAs?: ElementType;
     subtitle?: string | null;
     flipped?: boolean | null;
     className?: string;
@@ -13,11 +15,13 @@ interface HeroCoverProps {
 export default function HeroCover({
     image,
     title,
+    titleAs,
     subtitle,
     flipped,
     className,
     textContainerClassName,
 }: HeroCoverProps) {
+    const Title = titleAs ?? "div";
     return (
         <div className={className}>
             <figure
@@ -35,7 +39,7 @@ export default function HeroCover({
                 >
                     <Image
                         src={image}
-                        alt={"Cover Image"}
+                        alt={`Cover for ${title} section`}
                         fill
                         className={"object-cover"}
                     />
@@ -46,7 +50,7 @@ export default function HeroCover({
                         textContainerClassName
                     )}
                 >
-                    <div className={"text-4xl"}>{title}</div>
+                    <Title className={"text-4xl"}>{title}</Title>
                     <hr className={"my-6 opacity-50"} />
                     <div className={"text-lg whitespace-pre-wrap"}>
                         {subtitle}

@@ -41,10 +41,10 @@ const Page = async ({ params }: ProjectPageProps) => {
                             "flex flex-col justify-center items-center absolute inset-0 text-center mx-4"
                         }
                     >
-                        <div className={"text-5xl font-bold mb-4"}>
+                        <h1 className={"text-5xl font-bold mb-4"}>
                             {project.title}
-                        </div>
-                        <div className={"text-3xl"}>{project.subtitle}</div>
+                        </h1>
+                        <h2 className={"text-3xl"}>{project.subtitle}</h2>
                     </div>
                 </div>
             </div>

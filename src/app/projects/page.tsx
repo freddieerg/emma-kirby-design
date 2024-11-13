@@ -22,6 +22,7 @@ export default async function Page() {
                     className={"flex flex-grow"}
                     image={pageData.cover!.coverImage.url}
                     title={pageData.cover!.title}
+                    titleAs={"h1"}
                     subtitle={pageData.cover!.subtitle}
                 />
             </div>

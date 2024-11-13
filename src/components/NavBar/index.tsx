@@ -35,6 +35,7 @@ export default function NavBar() {
                         toggle={setOpen}
                         rounded
                         size={24}
+                        label={"Open Navigation Menu"}
                     />
                 </div>
             </div>

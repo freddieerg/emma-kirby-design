@@ -21,21 +21,25 @@ export default async function Page() {
         switch (content?.__typename) {
             case "ComponentComponentsCover":
                 return (
-                    <HeroCover
-                        image={content.coverImage.url}
-                        title={content.title}
-                        subtitle={content.subtitle}
-                        flipped={content.flipped}
-                        textContainerClassName={"py-12 md:py-28 lg:py-40"}
-                    />
+                    <section aria-label={content.title}>
+                        <HeroCover
+                            image={content.coverImage.url}
+                            title={content.title}
+                            subtitle={content.subtitle}
+                            flipped={content.flipped}
+                            textContainerClassName={"py-12 md:py-28 lg:py-40"}
+                        />
+                    </section>
                 );
             case "ComponentComponentsQuote":
                 return (
-                    <Quote
-                        quote={content.quote}
-                        author={content.author}
-                        subtitle={content.subtitle}
-                    />
+                    <section aria-label={`Quote by ${content.author}`}>
+                        <Quote
+                            quote={content.quote}
+                            author={content.author}
+                            subtitle={content.subtitle}
+                        />
+                    </section>
                 );
             case "Error":
                 return null;
@@ -50,6 +54,7 @@ export default async function Page() {
                     className={"flex flex-grow"}
                     image={pageData.cover!.coverImage.url}
                     title={pageData.cover!.title}
+                    titleAs={"h1"}
                     subtitle={pageData.cover!.subtitle}
                 />
             </div>
