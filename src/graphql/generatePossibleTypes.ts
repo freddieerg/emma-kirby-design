@@ -53,7 +53,10 @@ export const generatePossibleTypes = async ({
         if (err) {
             console.error("Error writing possibleTypes.json", err);
         } else {
-            console.log("Fragment types successfully extracted!");
+            console.log(
+                "\x1b[92m%s\x1b[0m",
+                "✓ Fragment types output was generated successfully"
+            );
         }
     });
 };
