@@ -1,8 +1,4 @@
-import {
-    registerApolloClient,
-    ApolloClient,
-    InMemoryCache,
-} from "@apollo/experimental-nextjs-app-support";
+import { registerApolloClient, ApolloClient, InMemoryCache } from "@apollo/experimental-nextjs-app-support";
 import possibleTypes from "@/graphql/possibleTypes.json";
 
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {

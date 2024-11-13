@@ -14,29 +14,18 @@ export default function NavBar() {
     return (
         <>
             <div
-                className={classNames(
-                    "flex w-full items-center justify-between my-3 px-6 pointer-events-auto",
-                    { "z-10": open }
-                )}
+                className={classNames("flex w-full items-center justify-between my-3 px-6 pointer-events-auto", {
+                    "z-10": open,
+                })}
             >
                 <Link href={"/"} className={"flex relative h-9 w-24"}>
-                    <Image
-                        src={logo}
-                        alt={"Emma Kirby Design Logo"}
-                        className={"w-auto"}
-                    />
+                    <Image src={logo} alt={"Emma Kirby Design Logo"} className={"w-auto"} />
                 </Link>
                 <Link href={"/"} className={"text-3xl font-bold"}>
                     Emma Kirby Design
                 </Link>
                 <div className={"flex justify-end h-fit -mr-3 w-24"}>
-                    <Hamburger
-                        toggled={open}
-                        toggle={setOpen}
-                        rounded
-                        size={24}
-                        label={"Open Navigation Menu"}
-                    />
+                    <Hamburger toggled={open} toggle={setOpen} rounded size={24} label={"Open Navigation Menu"} />
                 </div>
             </div>
             <Dialog.Root open={open}>
@@ -47,39 +36,19 @@ export default function NavBar() {
                         onEscapeKeyDown={() => setOpen(false)}
                     >
                         <ul className={"flex flex-col space-y-2 text-center"}>
-                            <li
-                                className={
-                                    "text-2xl duration-300 hover:opacity-80"
-                                }
-                            >
+                            <li className={"text-2xl duration-300 hover:opacity-80"}>
                                 <Link href={"/"}>Home</Link>
                             </li>
-                            <li
-                                className={
-                                    "text-2xl duration-300 hover:opacity-80"
-                                }
-                            >
+                            <li className={"text-2xl duration-300 hover:opacity-80"}>
                                 <Link href={"/about-us"}>About Us</Link>
                             </li>
-                            <li
-                                className={
-                                    "text-2xl duration-300 hover:opacity-80"
-                                }
-                            >
+                            <li className={"text-2xl duration-300 hover:opacity-80"}>
                                 <Link href={"/what-we-do"}>What We Do</Link>
                             </li>
-                            <li
-                                className={
-                                    "text-2xl duration-300 hover:opacity-80"
-                                }
-                            >
+                            <li className={"text-2xl duration-300 hover:opacity-80"}>
                                 <Link href={"/projects"}>Projects</Link>
                             </li>
-                            <li
-                                className={
-                                    "text-2xl duration-300 hover:opacity-80"
-                                }
-                            >
+                            <li className={"text-2xl duration-300 hover:opacity-80"}>
                                 <Link href={"/"}>Contact Us</Link>
                             </li>
                         </ul>
@@ -89,9 +58,7 @@ export default function NavBar() {
                                 <span>·</span>
                                 <Link href={"/"}>Terms & Conditions</Link>
                             </div>
-                            <div>
-                                © {new Date().getFullYear()} Emma Kirby Design
-                            </div>
+                            <div>© {new Date().getFullYear()} Emma Kirby Design</div>
                         </div>
                     </Dialog.Content>
                 </Dialog.Portal>

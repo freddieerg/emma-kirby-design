@@ -27,20 +27,12 @@ export default async function Page() {
                 />
             </div>
             <div>
-                <ul
-                    className={
-                        "grid grid-cols-1 lg:grid-cols-2 gap-8 px-12 py-20"
-                    }
-                >
+                <ul className={"grid grid-cols-1 lg:grid-cols-2 gap-8 px-12 py-20"}>
                     {pageData.projects.map((project) => (
                         <li key={project!.projectId} className={"w-full"}>
                             <Link href={`/projects/${project!.projectId}`}>
                                 <figure>
-                                    <div
-                                        className={
-                                            "relative aspect-video rounded overflow-hidden shadow-lg"
-                                        }
-                                    >
+                                    <div className={"relative aspect-video rounded overflow-hidden shadow-lg"}>
                                         <Image
                                             src={project!.thumbnail.url}
                                             alt={project!.title}
@@ -49,12 +41,8 @@ export default async function Page() {
                                         />
                                     </div>
                                     <figcaption className={"px-4 mt-4"}>
-                                        <div className={"text-xl"}>
-                                            {project!.title}
-                                        </div>
-                                        <div className={"opacity-50"}>
-                                            {project!.subtitle}
-                                        </div>
+                                        <div className={"text-xl"}>{project!.title}</div>
+                                        <div className={"opacity-50"}>{project!.subtitle}</div>
                                     </figcaption>
                                 </figure>
                             </Link>

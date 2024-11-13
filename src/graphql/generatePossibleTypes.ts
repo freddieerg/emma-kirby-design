@@ -12,10 +12,7 @@ interface Supertype {
     }[];
 }
 
-export const generatePossibleTypes = async ({
-    input,
-    output,
-}: GeneratePossibleTypesArgs) => {
+export const generatePossibleTypes = async ({ input, output }: GeneratePossibleTypesArgs) => {
     const q = await fetch(input, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -43,9 +40,7 @@ export const generatePossibleTypes = async ({
 
     json.data.__schema.types.forEach((supertype: Supertype) => {
         if (supertype.possibleTypes) {
-            possibleTypes[supertype.name] = supertype.possibleTypes.map(
-                (subtype) => subtype.name
-            );
+            possibleTypes[supertype.name] = supertype.possibleTypes.map((subtype) => subtype.name);
         }
     });
 
@@ -53,10 +48,7 @@ export const generatePossibleTypes = async ({
         if (err) {
             console.error("Error writing possibleTypes.json", err);
         } else {
-            console.log(
-                "\x1b[92m%s\x1b[0m",
-                "✓ Fragment types output was generated successfully"
-            );
+            console.log("\x1b[92m%s\x1b[0m", "✓ Fragment types output was generated successfully");
         }
     });
 };

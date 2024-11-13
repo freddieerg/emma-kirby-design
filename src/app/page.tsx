@@ -17,18 +17,10 @@ export default async function Home() {
             <div className={"flex flex-col h-screen"}>
                 <NavBar />
                 <div className={"flex flex-col items-center flex-grow mx-6"}>
-                    <div
-                        className={
-                            "size-full relative rounded-lg overflow-hidden"
-                        }
-                    >
-                        <RandomImage
-                            images={homePage.carousel.map((img) => img!.url)}
-                        />
+                    <div className={"size-full relative rounded-lg overflow-hidden"}>
+                        <RandomImage images={homePage.carousel.map((img) => img!.url)} />
                     </div>
-                    <div className={"text-2xl my-4"}>
-                        Interior Design · Architecture · Construction · Planning
-                    </div>
+                    <div className={"text-2xl my-4"}>Interior Design · Architecture · Construction · Planning</div>
                 </div>
             </div>
         </>

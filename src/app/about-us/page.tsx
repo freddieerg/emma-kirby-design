@@ -36,11 +36,7 @@ export default async function Page() {
                             className={"flex flex-col md:flex-row"}
                         >
                             <div className={"basis-5/12 md:order-1"}>
-                                <div
-                                    className={
-                                        "relative w-full rounded-lg overflow-hidden shadow-xl"
-                                    }
-                                >
+                                <div className={"relative w-full rounded-lg overflow-hidden shadow-xl"}>
                                     <Image
                                         src={tm.photo.url}
                                         alt={`Photo of ${tm.name}`}
@@ -53,12 +49,8 @@ export default async function Page() {
                             <div className={"basis-7/12 mt-8 md:mt-0"}>
                                 <div className={"sticky top-8 sm:mr-12"}>
                                     <div className={"text-3xl"}>{tm.name}</div>
-                                    <div className={"text-xl opacity-70"}>
-                                        {tm.role}
-                                    </div>
-                                    <div className={"mt-8"}>
-                                        {tm.description}
-                                    </div>
+                                    <div className={"text-xl opacity-70"}>{tm.role}</div>
+                                    <div className={"mt-8"}>{tm.description}</div>
                                 </div>
                             </div>
                         </section>

@@ -41,14 +41,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html
-            lang="en"
-            className={classNames(
-                "bg-[#252525]",
-                "text-[#b4b0a6]",
-                athelas.variable
-            )}
-        >
+        <html lang="en" className={classNames("bg-[#252525]", "text-[#b4b0a6]", athelas.variable)}>
             <body className={"font-serif antialiased"}>{children}</body>
         </html>
     );

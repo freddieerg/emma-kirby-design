@@ -3,16 +3,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import {
-    Children,
-    cloneElement,
-    isValidElement,
-    ReactNode,
-    useCallback,
-    useEffect,
-    useMemo,
-    useState,
-} from "react";
+import { Children, cloneElement, isValidElement, ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 import { EmblaCarouselType } from "embla-carousel";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/16/solid";
 
@@ -43,10 +34,7 @@ export default function Gallery({ slides, children }: GalleryProps) {
                     ? cloneElement(child, {
                           ...child.props,
                           children: (
-                              <button
-                                  className={"size-full"}
-                                  onClick={() => openAtIndex(index)}
-                              >
+                              <button className={"size-full"} onClick={() => openAtIndex(index)}>
                                   {child.props.children}
                               </button>
                           ),
@@ -92,15 +80,9 @@ export default function Gallery({ slides, children }: GalleryProps) {
                         className="flex flex-col items-center justify-center fixed inset-0 data-[state=open]:animate-contentShow"
                         onEscapeKeyDown={() => setOpen(false)}
                     >
-                        <div
-                            className={
-                                "flex justify-center items-center flex-col flex-grow w-full"
-                            }
-                        >
+                        <div className={"flex justify-center items-center flex-col flex-grow w-full"}>
                             <div
-                                className={
-                                    "flex justify-between w-full absolute top-4 flex-shrink px-6"
-                                }
+                                className={"flex justify-between w-full absolute top-4 flex-shrink px-6"}
                                 style={{
                                     textShadow: "1px 1px 3px black",
                                 }}
@@ -108,10 +90,7 @@ export default function Gallery({ slides, children }: GalleryProps) {
                                 <div>
                                     {selectedIndex + 1} of {slides?.length}
                                 </div>
-                                <button
-                                    className={""}
-                                    onClick={() => setOpen(false)}
-                                >
+                                <button className={""} onClick={() => setOpen(false)}>
                                     <div
                                         style={{
                                             textShadow: "1px 1px 3px black",
@@ -121,24 +100,11 @@ export default function Gallery({ slides, children }: GalleryProps) {
                                     </div>
                                 </button>
                             </div>
-                            <div
-                                className="flex flex-grow overflow-hidden w-full h-full"
-                                ref={emblaRef}
-                            >
+                            <div className="flex flex-grow overflow-hidden w-full h-full" ref={emblaRef}>
                                 <div className="flex flex-grow -z-10">
                                     {slides.map((slide, index) => (
-                                        <div
-                                            key={index}
-                                            className={
-                                                "relative grow-0 shrink-0 basis-full"
-                                            }
-                                        >
-                                            <Image
-                                                src={slide}
-                                                alt={""}
-                                                fill
-                                                className={"object-contain"}
-                                            />
+                                        <div key={index} className={"relative grow-0 shrink-0 basis-full"}>
+                                            <Image src={slide} alt={""} fill className={"object-contain"} />
                                         </div>
                                     ))}
                                 </div>
@@ -148,18 +114,14 @@ export default function Gallery({ slides, children }: GalleryProps) {
                                     }
                                 >
                                     <button
-                                        className={
-                                            "rounded bg-[#121212] bg-opacity-40 pointer-events-auto"
-                                        }
+                                        className={"rounded bg-[#121212] bg-opacity-40 pointer-events-auto"}
                                         aria-label={"Previous Slide"}
                                         onClick={() => emblaApi?.scrollPrev()}
                                     >
                                         <ArrowLeftIcon className={"size-8"} />
                                     </button>
                                     <button
-                                        className={
-                                            "rounded bg-[#121212] bg-opacity-40 pointer-events-auto"
-                                        }
+                                        className={"rounded bg-[#121212] bg-opacity-40 pointer-events-auto"}
                                         aria-label={"Next Slide"}
                                         onClick={() => emblaApi?.scrollNext()}
                                     >

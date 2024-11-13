@@ -26,24 +26,11 @@ const Page = async ({ params }: ProjectPageProps) => {
             <div className={"flex flex-col h-screen"}>
                 <NavBar />
                 <div className={"flex flex-grow relative"}>
-                    <div
-                        className={"relative size-full bg-opacity-60 bg-black"}
-                    >
-                        <Image
-                            src={project.thumbnail.url}
-                            alt={""}
-                            className={"object-cover -z-10"}
-                            fill
-                        />
+                    <div className={"relative size-full bg-opacity-60 bg-black"}>
+                        <Image src={project.thumbnail.url} alt={""} className={"object-cover -z-10"} fill />
                     </div>
-                    <div
-                        className={
-                            "flex flex-col justify-center items-center absolute inset-0 text-center mx-4"
-                        }
-                    >
-                        <h1 className={"text-5xl font-bold mb-4"}>
-                            {project.title}
-                        </h1>
+                    <div className={"flex flex-col justify-center items-center absolute inset-0 text-center mx-4"}>
+                        <h1 className={"text-5xl font-bold mb-4"}>{project.title}</h1>
                         <h2 className={"text-3xl"}>{project.subtitle}</h2>
                     </div>
                 </div>
@@ -52,17 +39,13 @@ const Page = async ({ params }: ProjectPageProps) => {
                 <section aria-label={"About the Project"}>
                     <div className={"text-4xl"}>About the Project</div>
                     <hr className={"my-6 opacity-50"} />
-                    <p className={"whitespace-pre-wrap text-lg"}>
-                        {project.about}
-                    </p>
+                    <p className={"whitespace-pre-wrap text-lg"}>{project.about}</p>
                 </section>
                 <section aria-label={"Gallery"}>
                     <div className={"text-4xl"}>Gallery</div>
                     <hr className={"my-6 opacity-50"} />
                     <ul className={"grid grid-cols-1 lg:grid-cols-3 gap-8"}>
-                        <Gallery
-                            slides={project.gallery.map((img) => img!.url)}
-                        >
+                        <Gallery slides={project.gallery.map((img) => img!.url)}>
                             {project.gallery.map((item, index) => (
                                 <li
                                     key={item!.url}
@@ -70,10 +53,7 @@ const Page = async ({ params }: ProjectPageProps) => {
                                         "relative aspect-square transition transform hover:scale-105 focus:scale-105 rounded-lg overflow-hidden"
                                     }
                                 >
-                                    <ProjectGalleryImageTile
-                                        thumbnailUrl={item!.url}
-                                        alt={`Image ${index}`}
-                                    />
+                                    <ProjectGalleryImageTile thumbnailUrl={item!.url} alt={`Image ${index}`} />
                                 </li>
                             ))}
                         </Gallery>

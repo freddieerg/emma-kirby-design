@@ -13,11 +13,7 @@ export default async function Page() {
 
     if (!pageData) return;
 
-    const mapDynamicZone = (
-        content: FragmentOf<
-            typeof WhatWeDoPageContentDynamicZoneFragment
-        > | null
-    ) => {
+    const mapDynamicZone = (content: FragmentOf<typeof WhatWeDoPageContentDynamicZoneFragment> | null) => {
         switch (content?.__typename) {
             case "ComponentComponentsCover":
                 return (
@@ -34,11 +30,7 @@ export default async function Page() {
             case "ComponentComponentsQuote":
                 return (
                     <section aria-label={`Quote by ${content.author}`}>
-                        <Quote
-                            quote={content.quote}
-                            author={content.author}
-                            subtitle={content.subtitle}
-                        />
+                        <Quote quote={content.quote} author={content.author} subtitle={content.subtitle} />
                     </section>
                 );
             case "Error":
@@ -64,8 +56,7 @@ export default async function Page() {
 }
 
 const WhatWeDoPageContentDynamicZoneFragment = graphql(`
-    fragment WhatWeDoPageContentDynamicZoneFragment on WhatWeDoPageContentDynamicZone
-    @_unmask {
+    fragment WhatWeDoPageContentDynamicZoneFragment on WhatWeDoPageContentDynamicZone @_unmask {
         __typename
         ... on ComponentComponentsQuote {
             __typename
