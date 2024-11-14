@@ -49,7 +49,7 @@ export default function NavBar() {
                                 <Link href={"/projects"}>Projects</Link>
                             </li>
                             <li className={"text-2xl duration-300 hover:opacity-80"}>
-                                <Link href={"/"}>Contact Us</Link>
+                                <Link href={"/contact-us"}>Contact Us</Link>
                             </li>
                         </ul>
                         <div className={"absolute bottom-0 mb-4 text-center"}>
