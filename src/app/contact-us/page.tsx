@@ -3,8 +3,7 @@ import { query } from "@/graphql/client";
 import NavBar from "@/components/NavBar";
 import HeroCover from "@/components/HeroCover";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
-import * as Dialog from "@radix-ui/react-dialog";
-import ContactForm from "@/components/ContactForm";
+import ContactFormDialog from "../../components/ContactFormDialog";
 
 export default async function Page() {
     const {
@@ -24,24 +23,10 @@ export default async function Page() {
                     titleAs={"h1"}
                     subtitle={pageData.cover!.subtitle}
                 >
-                    <Dialog.Root>
-                        <Dialog.Trigger
-                            className={
-                                "flex items-center border border-white border-opacity-40 rounded px-2 py-1 mb-4 transition hover:opacity-80"
-                            }
-                        >
-                            <EnvelopeIcon className={"size-5 mr-2"} />
-                            Send Us a Message
-                        </Dialog.Trigger>
-                        <Dialog.Portal>
-                            <Dialog.Overlay className="fixed inset-0 bg-[#121212] data-[state=open]:animate-overlayShow" />
-                            <Dialog.Content className="flex flex-col items-center sm:justify-center fixed inset-0 data-[state=open]:animate-contentShow overflow-auto">
-                                <div className={"overflow-scroll max-w-screen-lg p-8 w-full"}>
-                                    <ContactForm />
-                                </div>
-                            </Dialog.Content>
-                        </Dialog.Portal>
-                    </Dialog.Root>
+                    <ContactFormDialog>
+                        <EnvelopeIcon className={"size-5 mr-2"} />
+                        Send Us a Message
+                    </ContactFormDialog>
                 </HeroCover>
             </div>
         </>
