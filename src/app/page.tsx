@@ -2,15 +2,16 @@ import NavBar from "@/components/NavBar";
 import { graphql } from "gql.tada";
 import { query } from "@/graphql/client";
 import RandomImage from "@/components/RandomImage";
+import { Metadata, ResolvingMetadata } from "next";
 
 export default async function Home() {
-    const { data } = await query({
+    const {
+        data: { homePage: pageData },
+    } = await query({
         query: HomePageQueryDocument,
     });
 
-    const { homePage } = data;
-
-    if (!homePage) return null;
+    if (!pageData) return null;
 
     return (
         <>
@@ -18,7 +19,7 @@ export default async function Home() {
                 <NavBar />
                 <div className={"flex flex-col items-center flex-grow mx-6"}>
                     <div className={"size-full relative rounded-lg overflow-hidden"}>
-                        <RandomImage images={homePage.carousel.map((img) => img!.url)} />
+                        <RandomImage images={pageData.carousel.map((img) => img!.url)} />
                     </div>
                     <div className={"text-2xl my-4"}>Interior Design · Architecture · Construction · Planning</div>
                 </div>

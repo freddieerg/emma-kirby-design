@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar";
 import HeroCover from "@/components/HeroCover";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import ContactFormDialog from "../../components/ContactFormDialog";
+import type { Metadata } from "next";
 
 export default async function Page() {
     const {
@@ -32,6 +33,10 @@ export default async function Page() {
         </>
     );
 }
+
+export const metadata: Metadata = {
+    title: "Contact Us",
+};
 
 const ContactUsPageFragment = graphql(`
     fragment ContactUsPageFragment on ContactUsPage @_unmask {

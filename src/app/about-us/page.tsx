@@ -3,6 +3,7 @@ import { query } from "@/graphql/client";
 import NavBar from "@/components/NavBar";
 import HeroCover from "@/components/HeroCover";
 import Image from "next/image";
+import type { Metadata } from "next";
 
 export default async function Page() {
     const {
@@ -60,6 +61,10 @@ export default async function Page() {
         </>
     );
 }
+
+export const metadata: Metadata = {
+    title: "About Us",
+};
 
 const AboutUsPageFragment = graphql(`
     fragment AboutUsPageFragment on AboutUsPage @_unmask {

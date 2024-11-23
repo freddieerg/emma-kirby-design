@@ -4,6 +4,7 @@ import { query } from "@/graphql/client";
 import Image from "next/image";
 import Link from "next/link";
 import HeroCover from "@/components/HeroCover";
+import type { Metadata } from "next";
 
 export default async function Page() {
     const {
@@ -53,6 +54,10 @@ export default async function Page() {
         </>
     );
 }
+
+export const metadata: Metadata = {
+    title: "Projects",
+};
 
 const ProjectsPageFragment = graphql(`
     fragment ProjectsPageFragment on ProjectsPage @_unmask {

@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar";
 import Image from "next/image";
 import ProjectGalleryImageTile from "@/components/ProjectGalleryImageTile";
 import Gallery from "@/components/Gallery";
+import { Metadata } from "next";
 
 interface ProjectPageProps {
     params: {
@@ -90,12 +91,17 @@ const ProjectQueryDocument = graphql(
     [ProjectFragment]
 );
 
-// export async function generateStaticParams() {
-//     const posts = await fetch("https://.../posts").then((res) => res.json());
-//
-//     return posts.map((post) => ({
-//         slug: post.slug,
-//     }));
-// }
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+    const { data } = await query({
+        query: ProjectQueryDocument,
+        variables: { projectId: params.projectSlug },
+    });
+
+    const project = data.projects[0];
+
+    return {
+        title: project?.title,
+    };
+}
 
 export default Page;

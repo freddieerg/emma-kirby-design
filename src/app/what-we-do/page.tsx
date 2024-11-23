@@ -3,6 +3,7 @@ import { query } from "@/graphql/client";
 import NavBar from "@/components/NavBar";
 import HeroCover from "@/components/HeroCover";
 import Quote from "@/components/Quote";
+import type { Metadata } from "next";
 
 export default async function Page() {
     const {
@@ -54,6 +55,10 @@ export default async function Page() {
         </>
     );
 }
+
+export const metadata: Metadata = {
+    title: "What We Do",
+};
 
 const WhatWeDoPageContentDynamicZoneFragment = graphql(`
     fragment WhatWeDoPageContentDynamicZoneFragment on WhatWeDoPageContentDynamicZone @_unmask {
