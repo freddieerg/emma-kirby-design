@@ -18,6 +18,11 @@ export const SettingsFragment = graphql(`
             width
             height
         }
+        footerImages {
+            url
+            width
+            height
+        }
     }
 `);
 
