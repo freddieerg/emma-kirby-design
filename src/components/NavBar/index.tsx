@@ -28,7 +28,7 @@ export default function NavBar() {
                         height={settings!.logo!.height ?? 0}
                     />
                 </Link>
-                <Link href={"/"} className={"text-3xl font-bold"}>
+                <Link href={"/"} className={"text-2xl md:text-3xl font-bold"}>
                     Emma Kirby Design
                 </Link>
                 <div className={"flex justify-end h-fit -mr-3 w-24"}>

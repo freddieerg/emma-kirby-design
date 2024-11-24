@@ -2,7 +2,6 @@ import NavBar from "@/components/NavBar";
 import { graphql } from "gql.tada";
 import { query } from "@/graphql/client";
 import RandomImage from "@/components/RandomImage";
-import { Metadata, ResolvingMetadata } from "next";
 
 export default async function Home() {
     const {
@@ -21,7 +20,9 @@ export default async function Home() {
                     <div className={"size-full relative rounded-lg overflow-hidden"}>
                         <RandomImage images={pageData.carousel.map((img) => img!.url)} />
                     </div>
-                    <div className={"text-2xl my-4"}>Interior Design · Architecture · Construction · Planning</div>
+                    <div className={"text-md md:text-2xl my-4"}>
+                        Interior Design · Architecture · Construction · Planning
+                    </div>
                 </div>
             </div>
         </>
