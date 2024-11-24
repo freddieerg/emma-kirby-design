@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import classNames from "classnames";
 import { ReactNode } from "react";
+import SettingsProviderWrapper from "@/components/SettingsProvider/SettingsProviderWrapper";
 
 const athelas = localFont({
     variable: "--font-athelas",
@@ -47,7 +48,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={classNames("bg-[#252525]", "text-[#b4b0a6]", athelas.variable)}>
-            <body className={"font-serif antialiased"}>{children}</body>
+            <body className={"font-serif antialiased"}>
+                <SettingsProviderWrapper>{children}</SettingsProviderWrapper>
+            </body>
         </html>
     );
 }

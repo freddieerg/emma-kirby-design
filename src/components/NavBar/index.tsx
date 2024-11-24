@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/public/logo.png";
 import Hamburger from "hamburger-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import Link from "next/link";
 import classNames from "classnames";
+import { SettingsContext } from "@/components/SettingsProvider";
 
 export default function NavBar() {
     const [open, setOpen] = useState(false);
+    const settings = useContext(SettingsContext);
 
     return (
         <>
@@ -19,7 +20,13 @@ export default function NavBar() {
                 })}
             >
                 <Link href={"/"} className={"flex relative h-9 w-24"}>
-                    <Image src={logo} alt={"Emma Kirby Design Logo"} className={"w-auto"} />
+                    <Image
+                        src={settings!.logo!.url}
+                        alt={"Emma Kirby Design Logo"}
+                        className={"w-auto"}
+                        width={settings!.logo!.width ?? 0}
+                        height={settings!.logo!.height ?? 0}
+                    />
                 </Link>
                 <Link href={"/"} className={"text-3xl font-bold"}>
                     Emma Kirby Design
