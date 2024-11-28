@@ -14,7 +14,7 @@ export default function NavBar() {
 
     return (
         <>
-            <div
+            <nav
                 className={classNames("flex w-full items-center justify-between my-3 px-6 pointer-events-auto", {
                     "z-10": open,
                 })}
@@ -34,7 +34,7 @@ export default function NavBar() {
                 <div className={"flex justify-end h-fit -mr-3 w-24"}>
                     <Hamburger toggled={open} toggle={setOpen} rounded size={24} label={"Open Navigation Menu"} />
                 </div>
-            </div>
+            </nav>
             <Dialog.Root open={open}>
                 <Dialog.Portal>
                     <Dialog.Overlay className="fixed inset-0 bg-[#121212] data-[state=open]:animate-overlayShow" />
