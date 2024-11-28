@@ -77,14 +77,22 @@ export default async function Footer() {
             </div>
             <div className={"flex-shrink-0 lg:ml-6"}>
                 {settings?.footerImages?.map((img) => (
-                    <Image
+                    <Link
                         key={img?.url}
-                        src={img?.url ?? ""}
-                        alt={""}
-                        width={img?.width ?? 0}
-                        height={img?.height ?? 0}
-                        className={"size-28"}
-                    />
+                        href={
+                            "https://thelist.houseandgarden.com/united-kingdom/grafton-oxfordshire/service/emma-kirby-design"
+                        }
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <Image
+                            src={img?.url ?? ""}
+                            alt={""}
+                            width={img?.width ?? 0}
+                            height={img?.height ?? 0}
+                            className={"size-28"}
+                        />
+                    </Link>
                 ))}
             </div>
         </div>
