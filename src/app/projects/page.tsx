@@ -17,7 +17,7 @@ export default async function Page() {
 
     return (
         <>
-            <div className={"flex flex-col h-screen"}>
+            <div className={"flex flex-col sm:min-h-screen"}>
                 <NavBar />
                 <HeroCover
                     className={"flex flex-grow"}
@@ -28,7 +28,7 @@ export default async function Page() {
                 />
             </div>
             <div>
-                <ul className={"grid grid-cols-1 lg:grid-cols-2 gap-8 px-12 py-20"}>
+                <ul className={"grid grid-cols-1 lg:grid-cols-2 gap-8 p-10 md:p-20"}>
                     {pageData.projects.map((project) => (
                         <li key={project!.projectId} className={"w-full"}>
                             <Link href={`/projects/${project!.projectId}`}>
