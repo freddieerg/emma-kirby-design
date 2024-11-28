@@ -61,9 +61,9 @@ export default function NavBar() {
                         </ul>
                         <div className={"absolute bottom-0 mb-4 text-center"}>
                             <div className={"flex space-x-2 text-xl mb-4"}>
-                                <Link href={"/"}>Privacy Policy</Link>
+                                <Link href={"/privacy"}>Privacy Policy</Link>
                                 <span>·</span>
-                                <Link href={"/"}>Terms & Conditions</Link>
+                                <Link href={"/terms"}>Terms & Conditions</Link>
                             </div>
                             <div>© {new Date().getFullYear()} Emma Kirby Design</div>
                         </div>
