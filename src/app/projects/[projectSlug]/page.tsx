@@ -36,7 +36,7 @@ const Page = async ({ params }: ProjectPageProps) => {
                     </div>
                 </div>
             </div>
-            <div className={"flex flex-col gap-y-10 mx-24 mt-16"}>
+            <div className={"flex flex-col gap-y-10 p-10 md:p-20"}>
                 <section aria-label={"About the Project"}>
                     <div className={"text-4xl"}>About the Project</div>
                     <hr className={"my-6 opacity-50"} />
