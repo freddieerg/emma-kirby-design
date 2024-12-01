@@ -5,6 +5,7 @@ import Image from "next/image";
 import ProjectGalleryImageTile from "@/components/ProjectGalleryImageTile";
 import Gallery from "@/components/Gallery";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface ProjectPageProps {
     params: {
@@ -20,7 +21,7 @@ const Page = async ({ params }: ProjectPageProps) => {
 
     const project = data.projects[0];
 
-    if (!project) return null;
+    if (!project) notFound();
 
     return (
         <>
