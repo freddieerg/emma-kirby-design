@@ -1,8 +1,8 @@
 import { revalidatePath } from "next/cache";
 import type { NextRequest } from "next/server";
 
-export async function GET(request: NextRequest) {
-    const token = request.nextUrl.searchParams.get("revalidationToken");
+export async function POST(request: NextRequest) {
+    const token = request.headers.get("revalidationToken");
 
     if (!token || token !== process.env.REVALIDATION_TOKEN) {
         return Response.json({
