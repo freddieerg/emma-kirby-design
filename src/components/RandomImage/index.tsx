@@ -2,16 +2,16 @@
 
 import Image from "next/image";
 import { sample } from "lodash";
-import { useState } from "react";
+import { useMemo } from "react";
 import classNames from "classnames";
+import { onLoadFadeIn } from "@/utils/images";
 
 interface RandomImageProps {
     images: string[];
 }
 
 export default function RandomImage({ images }: RandomImageProps) {
-    const image = sample(images);
-    const [loaded, setLoaded] = useState(false);
+    const image = useMemo(() => sample(images), [images]);
 
     if (!image) return null;
 
@@ -20,10 +20,8 @@ export default function RandomImage({ images }: RandomImageProps) {
             src={image}
             alt={""}
             fill
-            className={classNames("object-cover opacity-0 transition", {
-                "opacity-100": loaded,
-            })}
-            onLoad={() => setLoaded(true)}
+            className={classNames("object-cover opacity-0 transition")}
+            onLoad={onLoadFadeIn}
         />
     );
 }
