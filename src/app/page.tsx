@@ -20,7 +20,7 @@ export default async function Home() {
                     <div className={"size-full relative rounded-lg overflow-hidden"}>
                         <RandomImage images={pageData.carousel.map((img) => img!.url)} />
                     </div>
-                    <div className={"text-md md:text-2xl my-4"}>
+                    <div className={"text-center text-md md:text-2xl my-4"}>
                         Interior Design · Architecture · Construction · Planning
                     </div>
                 </div>
