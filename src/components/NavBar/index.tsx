@@ -19,19 +19,19 @@ export default function NavBar() {
                     "z-10": open,
                 })}
             >
-                <Link href={"/"} className={"flex relative h-9 w-24"}>
+                <Link href={"/"} className={"flex flex-grow basis-0 relative"}>
                     <Image
                         src={settings!.logo!.url}
                         alt={"Emma Kirby Design Logo"}
-                        className={"w-auto"}
+                        className={"w-auto h-9"}
                         width={settings!.logo!.width ?? 0}
                         height={settings!.logo!.height ?? 0}
                     />
                 </Link>
-                <Link href={"/"} className={"text-2xl md:text-3xl font-bold"}>
+                <Link href={"/"} className={"flex text-2xl md:text-3xl font-bold"}>
                     Emma Kirby Design
                 </Link>
-                <div className={"flex justify-end h-fit -mr-3 w-24"}>
+                <div className={"flex flex-grow basis-0 justify-end h-fit -mr-3"}>
                     <Hamburger toggled={open} toggle={setOpen} rounded size={24} label={"Open Navigation Menu"} />
                 </div>
             </nav>

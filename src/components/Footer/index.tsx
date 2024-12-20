@@ -70,7 +70,7 @@ export default async function Footer() {
                         </li>
                     </ul>
                 </div>
-                <div className={"flex flex-col lg:flex-row items-center gap-5"}>
+                <div className={"flex flex-col text-center lg:text-left lg:flex-row items-center gap-5"}>
                     <div>© {new Date().getFullYear()} Emma Kirby Design | Designed by Freddie Ergatoudis</div>
                     <div className={"lg:ml-auto"}>The Coach House Studio, Home Farm, Grafton, Bampton, OX18 2RY</div>
                 </div>

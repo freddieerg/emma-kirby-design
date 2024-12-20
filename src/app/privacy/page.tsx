@@ -23,7 +23,7 @@ export default async function Page() {
                     subtitle={pageData.cover!.subtitle}
                 />
             </div>
-            <section className={"p-10 md:p-20"}>
+            <section className={"p-5 md:p-20"}>
                 <div className={"prose invert max-w-none"} dangerouslySetInnerHTML={{ __html: pageData.policy }} />
             </section>
         </>

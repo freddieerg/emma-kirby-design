@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import classNames from "classnames";
 import { ElementType, ReactNode } from "react";
+import { onLoadFadeIn } from "@/utils/images";
 
 interface HeroCoverProps {
     image: string;
@@ -32,11 +35,17 @@ export default function HeroCover({
                         "sm:order-1": flipped,
                     })}
                 >
-                    <Image src={image} alt={`Cover for ${title} section`} fill className={"object-cover"} />
+                    <Image
+                        src={image}
+                        alt={`Cover for ${title} section`}
+                        fill
+                        className={"object-cover transition opacity-0"}
+                        onLoad={onLoadFadeIn}
+                    />
                 </div>
                 <figcaption
                     className={classNames(
-                        "sm:basis-2/3 md:basis-1/2 flex flex-col justify-center p-8",
+                        "sm:basis-2/3 md:basis-1/2 flex flex-col justify-center px-5 py-8 sm:p-8",
                         textContainerClassName
                     )}
                 >

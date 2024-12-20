@@ -26,7 +26,7 @@ export default async function Page() {
                     subtitle={pageData.cover!.subtitle}
                 />
             </div>
-            <div className={"flex flex-col gap-y-16 p-10 md:p-20"}>
+            <div className={"flex flex-col gap-y-16 p-5 md:p-20"}>
                 {pageData.teamMembers!.map((tm, index) => {
                     if (!tm) return null;
 

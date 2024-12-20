@@ -14,13 +14,13 @@ export default async function Home() {
 
     return (
         <>
-            <div className={"flex flex-col h-screen"}>
+            <div className={"flex flex-col h-svh"}>
                 <NavBar />
                 <div className={"flex flex-col items-center flex-grow mx-6"}>
                     <div className={"size-full relative rounded-lg overflow-hidden"}>
                         <RandomImage images={pageData.carousel.map((img) => img!.url)} />
                     </div>
-                    <div className={"text-md md:text-2xl my-4"}>
+                    <div className={"text-center text-md md:text-2xl my-4"}>
                         Interior Design · Architecture · Construction · Planning
                     </div>
                 </div>
