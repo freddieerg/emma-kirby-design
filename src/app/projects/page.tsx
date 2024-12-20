@@ -28,7 +28,7 @@ export default async function Page() {
                 />
             </div>
             <div>
-                <ul className={"grid grid-cols-1 lg:grid-cols-2 gap-8 p-10 md:p-20"}>
+                <ul className={"grid grid-cols-1 lg:grid-cols-2 gap-8 p-5 pt-7 md:p-20"}>
                     {pageData.projects.map((project) => (
                         <li key={project!.projectId} className={"w-full"}>
                             <Link href={`/projects/${project!.projectId}`}>
@@ -42,7 +42,7 @@ export default async function Page() {
                                         />
                                     </div>
                                     <figcaption className={"px-4 mt-4"}>
-                                        <div className={"text-xl"}>{project!.title}</div>
+                                        <div className={"text-lg sm:text-xl"}>{project!.title}</div>
                                         <div className={"opacity-50"}>{project!.subtitle}</div>
                                     </figcaption>
                                 </figure>
