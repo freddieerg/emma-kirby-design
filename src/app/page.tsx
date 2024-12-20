@@ -14,7 +14,7 @@ export default async function Home() {
 
     return (
         <>
-            <div className={"flex flex-col h-screen"}>
+            <div className={"flex flex-col h-svh"}>
                 <NavBar />
                 <div className={"flex flex-col items-center flex-grow mx-6"}>
                     <div className={"size-full relative rounded-lg overflow-hidden"}>
