@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { ReactNode } from "react";
 import SettingsProviderWrapper from "@/components/SettingsProvider/SettingsProviderWrapper";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const athelas = localFont({
     variable: "--font-athelas",
@@ -52,6 +53,7 @@ export default function RootLayout({
             <body className={"font-serif antialiased"}>
                 <SettingsProviderWrapper>{children}</SettingsProviderWrapper>
                 <Footer />
+                <Analytics />
             </body>
         </html>
     );
